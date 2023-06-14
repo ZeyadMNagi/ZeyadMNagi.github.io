@@ -346,7 +346,7 @@ window.addEventListener('keydown' , (event) =>{
             enemy.lastkey = 'ArrowLeft'
             break
         case 'ArrowUp':
-
+            keys.ArrowUp.pressed = true
             enemy.velocity.y = -15
             break 
         case 'ArrowDown':
@@ -373,9 +373,6 @@ window.addEventListener('keyup' , (event) =>{
         case 'w':
             keys.w.pressed = false
         break
-        case 's':
-            keys.s.pressed = false
-        break
         case 'ArrowUp':
             keys.ArrowUp.pressed = false
         break
@@ -385,9 +382,7 @@ window.addEventListener('keyup' , (event) =>{
         case 'ArrowLeft':
             keys.ArrowLeft.pressed = false
         break
-        case 'ArrowDown':
-            keys.ArrowDown.pressed = false
-        break
+
     }
     
 })     
