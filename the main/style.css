@@ -1,0 +1,17 @@
+#Pname,#Ename{
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;  
+  color: coral;
+  margin: 5px;
+
+}
+
+.creator
+{
+  color: #fff;
+  z-index: 9999;
+  font-size: 25px;
+  margin-top: -80;
+  margin-left: 20px;
+  font-family: 'Press Start 2P', cursive;  
+}

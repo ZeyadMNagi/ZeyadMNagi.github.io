@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+        </script>
+    <title>choose you character</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="pop-up">
+            <label><h1>choose your character</h1></label>
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>player 1</th>
+                        <th>player 2</th>
+                    </tr>
+                    <tr>
+                        <td><img id="p1" src="the main/img/p1/preview.png" onclick="choose1( this)" alt="wizard">
+                            <img src="the main/img/p3/preview.png" id="p3" class="wow" alt="electric sword" onclick="choose1(this)">
+                        </td>
+                        <td><img id="p2" src="the main/img/p2/preview.png" onclick="choose2( this)" alt="wizard">
+                            <img src="the main/img/p4/preview.png" id="p4" class="wow" alt="electric sword"onclick="choose2(this)">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><img src="the main/img/p5/preview.png" id="p5" alt="ninja"onclick="choose1(this)">
+                            <img src="the main/img/p7/preview.png"id="p7" alt="the King"onclick="choose1(this)">
+                        </td>
+                        <td><img src="the main/img/p6/preview.png" id="p6" alt="ninja"onclick="choose2(this)">
+                            <img src="the main/img/p8/preview.png" id="p8" alt="the King"onclick="choose2(this)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="the main/img/p13/Idle (2).png" alt="evil wizard" id="p13" onclick="choose1(this)">
+                            <img src="the main/img/p15/Idle (2).png" alt="knight" id="p15" onclick="choose1(this)">
+                            </td>
+                        <td>
+                            <img src="the main/img/p14/Idle (2).png" alt="evil wizard" id="p14" onclick="choose2(this)">
+                            <img src="the main/img/p16/Idle (2).png" alt="knight" id="p16" onclick="choose2(this)">
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+    <script src="the main/js/character.js"></script>
+
+</body>
+</html>
