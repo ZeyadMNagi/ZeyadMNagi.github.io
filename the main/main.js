@@ -13,8 +13,8 @@ var opp_2 = JSON.parse(object_2)
 
 
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 1024;
+canvas.height = 576;
 C.fillRect(0 , 0 , canvas.width , canvas.height)
 
 var gravity = 0.5
