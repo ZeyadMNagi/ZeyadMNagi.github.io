@@ -4,12 +4,15 @@ const C = canvas.getContext('2d');
 
 
 
-var object_1 = localStorage.getItem("player1")
-var opp_1 = JSON.parse(object_1)
-var object_2 = localStorage.getItem("player2")
-var opp_2 = JSON.parse(object_2)
+var object_1 = localStorage.getItem("player1");
+var opp_1 = JSON.parse(object_1);
+var object_2 = localStorage.getItem("player2");
+var opp_2 = JSON.parse(object_2);
 
 
+var canPress = true;
+var canAttack_P = true;
+var canAttack_E = true;
 
 
 
@@ -202,52 +205,54 @@ const keys ={
     }
 }
 
-let lastkey 
+let lastkey; 
 
-decrease()
+decrease();
 
 function animate(){
-    window.requestAnimationFrame(animate)
-    C.fillStyle = 'black'
-    C.fillRect(0, 0,canvas.width, canvas.height)
-    background.update()
-    shop.update()
-    C.fillStyle = 'rgba(255,255,255,0.15)'
-    C.fillRect(0,0 , canvas.width , canvas.height)
-    player.update()
-    enemy.update()
+    window.requestAnimationFrame(animate);
+    C.fillStyle = 'black';
+    C.fillRect(0, 0,canvas.width, canvas.height);
+    background.update();
+    shop.update();
+    C.fillStyle = 'rgba(255,255,255,0.15)';
+    C.fillRect(0,0 , canvas.width , canvas.height);
+    player.update();
+    enemy.update();
 
-    player.velocity.x =0
-    enemy.velocity.x =0
+    player.velocity.x =0;
+    enemy.velocity.x =0;
     //player
 
     if (keys.a.pressed && player.lastkey === 'a'){
-        player.velocity.x = -5
-        player.switchsprite('run')
+        player.velocity.x = -5;
+        player.switchsprite('run');
     }else if (keys.d.pressed && player.lastkey === 'd'){
-        player.velocity.x = 5
-        player.switchsprite('run')
+        player.velocity.x = 5;
+        player.switchsprite('run');
         
     }else{
-        player.switchsprite('idle')
+        player.switchsprite('idle');
     }
 
     //jump
-    if (player.velocity.y < 0) {
-        player.switchsprite('jump')
-      } else if (player.velocity.y > 0) {
-        player.switchsprite('fall')
-      }
+
+        if (player.velocity.y < 0) {
+            player.switchsprite('jump');
+        } else if (player.velocity.y > 0) {
+            player.switchsprite('fall');
+        }  
+
 
     // Enemy movement
   if (keys.ArrowLeft.pressed && enemy.lastkey === 'ArrowLeft') {
-    enemy.velocity.x = -5
-    enemy.switchsprite('run')
+    enemy.velocity.x = -5;
+    enemy.switchsprite('run');
   } else if (keys.ArrowRight.pressed && enemy.lastkey === 'ArrowRight') {
-    enemy.velocity.x = 5
-    enemy.switchsprite('run')
+    enemy.velocity.x = 5;
+    enemy.switchsprite('run');
   } else {
-    enemy.switchsprite('idle')
+    enemy.switchsprite('idle');
   }
 // jumping
 if (enemy.velocity.y < 0) {
@@ -261,7 +266,7 @@ if (enemy.velocity.y < 0) {
       rectangle2: enemy
     }) && player.isattacking && player.framecurrent === 3 ) {
     enemy.takehit()
-    player.isattacking = false
+    player.isattacking = false;
 
     gsap.to('#en-heal', {
         width: enemy.health + '%'
@@ -270,7 +275,7 @@ if (enemy.velocity.y < 0) {
 
     // if player misses
   if (player.isattacking && player.framecurrent === 3) {
-    player.isattacking = false
+    player.isattacking = false;
   }
         
 // this is where our player gets hit
@@ -282,8 +287,8 @@ if (
     enemy.isattacking &&
     enemy.framecurrent === 2
   ) {
-    player.takehit()
-    enemy.isattacking = false
+    player.takehit();
+    enemy.isattacking = false;
 
     gsap.to('#ol-heal', {
         width: player.health + '%'
@@ -293,68 +298,76 @@ if (
   
     //missing
     if(enemy.isattacking &&enemy.framecurrent === 2){
-        enemy.isattacking = false
+        enemy.isattacking = false;
     }
 
     //end game
     if (enemy.health <= 0 || player.health <= 0){
-        determineWinner({player,enemy,timeid})
+        determineWinner({player,enemy,timeid});
 
     }
     if(player.health<=0){
-        player.switchsprite('death')
+        player.switchsprite('death');
     }
     if(enemy.health<=0){
-        enemy.switchsprite('death')
+        enemy.switchsprite('death');
     }
 }
 
 animate()
 
 window.addEventListener('keydown' , (event) =>{
-    if(!player.dead){
+    if(!player.dead && canPress === true){
         switch (event.key) {
             case 'd':
-                keys.d.pressed = true
-                player.lastkey = 'd'
+                keys.d.pressed = true;
+                player.lastkey = 'd';
+                canAttack_P = false;
                 break
             case 'a':
-                keys.a.pressed = true
-                player.lastkey = 'a'
+                keys.a.pressed = true;
+                player.lastkey = 'a';
+                canAttack_P = false;
                 break
             case 'w':
-                keys.w.pressed = true
-                player.velocity.y = -15
+                keys.w.pressed = true;
+                player.velocity.y = -15;
                 break
             case 's':
-                player.attack2()
+                if(canAttack_P)
+                    player.attack2();
                 break
             case 'e':
-                player.attack1()
+                if(canAttack_P)
+                    player.attack1();
                 break
     
     }
 
-    if(!enemy.dead){
+    if(!enemy.dead && canPress === true){
     switch (event.key){
         case 'ArrowRight':
-            keys.ArrowRight.pressed = true
-            enemy.lastkey = 'ArrowRight'
+            keys.ArrowRight.pressed = true;
+            enemy.lastkey = 'ArrowRight';
+            canAttack_E = false;
             break
         case 'ArrowLeft':
-            keys.ArrowLeft.pressed = true
-            enemy.lastkey = 'ArrowLeft'
+            keys.ArrowLeft.pressed = true;
+            enemy.lastkey = 'ArrowLeft';
+            canAttack_E = false;
             break
         case 'ArrowUp':
-            keys.ArrowUp.pressed = true
-            enemy.velocity.y = -15
+
+            enemy.velocity.y = -15;
             break 
         case 'ArrowDown':
-            enemy.attack1()
+            if(canAttack_E)
+                enemy.attack1();
 
             break
         case ' ':
-            enemy.attack2()
+            if(canAttack_E)
+                enemy.attack2();
             break        
 
 
@@ -365,25 +378,32 @@ window.addEventListener('keydown' , (event) =>{
 window.addEventListener('keyup' , (event) =>{
     switch (event.key) {
         case 'd':
-            keys.d.pressed = false
+            keys.d.pressed = false;
+            canAttack_P = true;
         break
         case 'a':
-            keys.a.pressed = false
+            keys.a.pressed = false;
+            canAttack_P = true;
+
         break
         case 'w':
-            keys.w.pressed = false
+            keys.w.pressed = false;
         break
+
         case 'ArrowUp':
-            keys.ArrowUp.pressed = false
+            keys.ArrowUp.pressed = false;
         break
         case 'ArrowRight':
-            keys.ArrowRight.pressed = false
+            keys.ArrowRight.pressed = false;
+            canAttack_E = true;
         break    
         case 'ArrowLeft':
-            keys.ArrowLeft.pressed = false
+            keys.ArrowLeft.pressed = false;
+            canAttack_E = true;
         break
 
     }
     
 })     
+
 

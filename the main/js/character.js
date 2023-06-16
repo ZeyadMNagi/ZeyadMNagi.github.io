@@ -19,9 +19,9 @@ class Character{
 
 
         for (const Sprite in this.sprites) {
-            sprites[Sprite].image = new Image()
-            sprites[Sprite].image.src = sprites[Sprite].imageSrc
-          }
+            sprites[Sprite].image = new Image();
+            sprites[Sprite].image.src = sprites[Sprite].imageSrc;
+        }
     }
     
 }

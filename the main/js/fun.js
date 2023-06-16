@@ -20,21 +20,21 @@ function retangularcollision({ rectangle1, rectangle2 }) {
       rectangle1.attackbox.position.y + rectangle1.attackbox.height >=
         rectangle2.position.y &&
       rectangle1.attackbox.position.y <= rectangle2.position.y + rectangle2.height
-    )
+    );
   }
 function determineWinner({player , enemy ,timeid}){
-    clearTimeout(timeid)
+    clearTimeout(timeid);
     if(player.health === enemy.health  ){
-        document.querySelector('#result').innerHTML = 'TIE'
-        document.querySelector('#result').style.display = 'flex'
+        document.querySelector('#result').innerHTML = 'TIE';
+        document.querySelector('#result').style.display = 'flex';
      }else if(player.health > enemy.health ){
-        document.querySelector('#result').innerHTML = 'player2' + ' WIN'
-        document.querySelector('#result').style.display = 'flex'
+        document.querySelector('#result').innerHTML = opp_1.name + ' WIN';
+        document.querySelector('#result').style.display = 'flex';
      }else if(player.health < enemy.health){
-        document.querySelector('#result').innerHTML =' player1' + ' WIN'
-        document.querySelector('#result').style.display = 'flex'
+        document.querySelector('#result').innerHTML = opp_2.name + ' WIN';
+        document.querySelector('#result').style.display = 'flex';
      }
-     retangularcollision
+     retangularcollision;
 }
 
 
@@ -43,15 +43,17 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 
 }
-    let time = 91
-    let timeid
+    let time = 91;
+    let timeid;
  function decrease(){
      if(time > 0  ){ 
-          timeid = setTimeout(decrease, 1000)   
-         time--
-         document.querySelector('#timer').innerHTML =  time 
+        timeid = setTimeout(decrease, 1000) ;  
+        time--;
+        document.querySelector('#timer').innerHTML =  time ;
      }
      if (time===0){
-         determineWinner({player,enemy,timeid})
+        determineWinner({player,enemy,timeid});
+        canPress = false;
      }
- }
+ };
+
