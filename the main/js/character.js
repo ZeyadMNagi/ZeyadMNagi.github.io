@@ -6,6 +6,7 @@ class Character{
         framemax = 1 ,
         sprites,
         offset = {x:0,y:0},
+        Shop,
 
 
     }){
@@ -15,7 +16,8 @@ class Character{
         this.scale = scale;
         this.framemax = framemax;
         this.sprites = sprites  ;
-        this.offset = offset
+        this.offset = offset,
+        this.shop = Shop
 
 
         for (const Sprite in this.sprites) {
@@ -25,12 +27,47 @@ class Character{
     }
     
 }
+class Background{
+    constructor({
+        position,
+        scale = 1,
+        width,
+        height,
+        need,
+        name
+    }) {
+        this.name = name
+        this.need = need
+        this.image = new Image();
+        this.image.src = need.imgSrc;
+        this.image.width = width;
+        this.image.height= height
+        this.scale = scale;
+        this.position = position;
+        this.framecurrent = 1;
+        this.framemax = 1;
+    }
+    draw(){
+        C.drawImage(
+            this.image ,
+            this.framecurrent * (this.image.width / this.framemax) , 
+            0,
+            this.image.width / this.framemax ,
+            this.image.height,
+
+            this.position.x ,
+            this.position.y- this.offset.y,
+            (this.image.width / this.framemax) * this.scale,
+            this.image.height * this.scale
+            )
+    }
+}
 
 const wizard_1 = new Character({
     name : "wizard",
     scale: 2.2,
     offset :{
-        x: 250, 
+        x: 150, 
         y: 155
     },
     sprites:{
@@ -114,7 +151,6 @@ const wizard_2 = new Character({
     }
 })
 
-
 const warrior_1 = new Character({
     name : "warrior",
     scale: 3.5,
@@ -158,7 +194,6 @@ const warrior_1 = new Character({
     }
 })
 
-
 const warrior_2 = new Character({
     name : "warrior",
     scale: 3.5,
@@ -201,7 +236,6 @@ const warrior_2 = new Character({
         }
     }
 })
-
 
 const samurai_1 = new Character({
     name : "samurai",
@@ -548,4 +582,51 @@ const knight_2 = new Character({
     }
 })
 
+const background_3 = new Background({
+    name:"forest",
+    position:{
+        x:0,
+        y:0
+    },
+    need:{
+        imgSrc:"./img/background1.png",
+        Shop : false
+
+    },
+    scale:1.2,
+    width:1024,
+    height:576,
+})
+const background_2 = new Background({
+    name: "main",
+    position:{
+        x:0,
+        y:0
+    },
+    need:{
+        imgSrc:"./img/background.png",
+        Shop:true    
+    },
+    
+    scale:1.2,
+    width:1024,
+    height:576,
+
+})
+const background_1 = new Background({
+    name: "roof",
+    position:{
+        x:0,
+        y:0
+    },
+    need:{
+        imgSrc:"./img/background.jpg",
+        Shop:false
+    },
+
+    scale:1.2,
+    width:1024,
+    height:576,
+
+})
 

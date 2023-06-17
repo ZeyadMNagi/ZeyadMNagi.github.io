@@ -21,8 +21,8 @@
             <div class="table">
                 <table>
                     <tr>
-                        <th>player 1</th>
-                        <th>player 2</th>
+                        <th>player1</th>
+                        <th>player2</th>
                     </tr>
                     <tr>
                         <td><img id="p1" src="the main/img/p1/preview.png" onclick="choose1( this)" alt="wizard">
@@ -53,12 +53,44 @@
                     </tr>
                 </table>
 
+
             </div>
+            <div class="backgrounds">
+                <label><h1>choose the background</h1></label>
+                <div class="images">
+                    <img id="img1" src="the main/img/background.jpg" alt=""  onclick="choose3(this) ">
+                    <img id="img2" src="the main/img/background.png" alt=""  onclick="choose3(this) ">
+                    <img id="img3" src="the main/img/Background1.png" alt="" onclick="choose3(this) " >
+                </div>
+            </div>
+            <div class="names">
+                <h1>Enter the player names</h1>    
+                <div class="input">
+                    <div class="g">
+                        <div class="g1">
+                            <h3>player1 name</h3>
+                            <input type="text" id="player1_name" placeholder="Enter your name" required>
+                        </div>  
+                        <div class="g2">
+                            <h3>player2 name</h3>
+                            <input type="text" id="player2_name" placeholder="Enter your name" required>
+                        </div>                         
+                    </div>
+                </div>
+                <button id="submit">Submit</button>
+
+            </div>
+            <div class="start">
+                <h4></h4>
+                <div class="b">
+                    <button id="start">Start the Fight</button>
+                </div>            
+            </div>
+ 
         </div>
     </div>
-    
+    <script src="the main/js/character.js"></script>    
     <script src="main.js"></script>
-    <script src="the main/js/character.js"></script>
 
 </body>
 </html>

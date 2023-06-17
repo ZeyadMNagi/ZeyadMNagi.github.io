@@ -6,8 +6,15 @@ var opp_1 = JSON.parse(object_1);
 var object_2 = localStorage.getItem("player2");
 var opp_2 = JSON.parse(object_2);
 
-P_name.innerHTML = opp_1.name;
-E_name.innerHTML = opp_2.name;
+var background_get = localStorage.getItem("background");
+var background_use = JSON.parse(background_get) 
+
+var PlayerName = localStorage.getItem("p1_name").toUpperCase();
+var EnemyName = localStorage.getItem("p2_name").toUpperCase();
+
+
+P_name.innerHTML = PlayerName;
+E_name.innerHTML = EnemyName;
 
 
 
@@ -28,10 +35,10 @@ function determineWinner({player , enemy ,timeid}){
         document.querySelector('#result').innerHTML = 'TIE';
         document.querySelector('#result').style.display = 'flex';
      }else if(player.health > enemy.health ){
-        document.querySelector('#result').innerHTML = opp_1.name + ' WIN';
+        document.querySelector('#result').innerHTML = PlayerName + ' WIN';
         document.querySelector('#result').style.display = 'flex';
      }else if(player.health < enemy.health){
-        document.querySelector('#result').innerHTML = opp_2.name + ' WIN';
+        document.querySelector('#result').innerHTML = EnemyName + ' WIN';
         document.querySelector('#result').style.display = 'flex';
      }
      retangularcollision;
@@ -43,17 +50,17 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 
 }
-    let time = 91;
-    let timeid;
- function decrease(){
-     if(time > 0  ){ 
-        timeid = setTimeout(decrease, 1000) ;  
-        time--;
-        document.querySelector('#timer').innerHTML =  time ;
-     }
-     if (time===0){
-        determineWinner({player,enemy,timeid});
-        canPress = false;
-     }
- };
+let time = 91;
+let timeid;
+function decrease(){
+  if(time > 0  ){ 
+    timeid = setTimeout(decrease, 1000) ;  
+    time--;
+    document.querySelector('#timer').innerHTML =  time ;
+  }
+  if (time===0){
+    determineWinner({player,enemy,timeid});
+      canPress = false;
+  }
+};
 

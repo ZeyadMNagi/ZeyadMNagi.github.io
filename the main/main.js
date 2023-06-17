@@ -3,12 +3,14 @@ const C = canvas.getContext('2d');
 
 
 
-
+// get the player and the enemy and the background from the localstorge
 var object_1 = localStorage.getItem("player1");
 var opp_1 = JSON.parse(object_1);
 var object_2 = localStorage.getItem("player2");
 var opp_2 = JSON.parse(object_2);
 
+var background_get = localStorage.getItem("background");
+var background_use = JSON.parse(background_get) 
 
 var canPress = true;
 var canAttack_P = true;
@@ -16,21 +18,101 @@ var canAttack_E = true;
 
 
 
+//offset for the roof background
+if(opp_1.name === "Evil wizard" && background_use.name === "roof"){
+    opp_1.offset.y = 270;
+}
+if(opp_2.name === "Evil wizard" && background_use.name === "roof"){
+    opp_2.offset.y = 270;
+}
+if(opp_1.name === "Knight" && background_use.name === "roof"){
+    opp_1.offset.y = 100;
+}
+if(opp_2.name === "Knight" && background_use.name === "roof"){
+    opp_2.offset.y = 100;
+}
+if(opp_1.name === "king" && background_use.name === "roof"){
+    opp_1.offset.y = 90;
+}
+if(opp_2.name === "king" && background_use.name === "roof"){
+    opp_2.offset.y = 90;
+}
+if(opp_1.name === "samurai" && background_use.name === "roof"){
+    opp_1.offset.y = 150;
+}
+if(opp_2.name === "samurai" && background_use.name === "roof"){
+    opp_2.offset.y = 150;
+}
+if(opp_1.name === "warrior" && background_use.name === "roof"){
+    opp_1.offset.y = 130;
+}
+if(opp_2.name === "warrior" && background_use.name === "roof"){
+    opp_2.offset.y = 130;
+}
+if(opp_1.name === "wizard" && background_use.name === "roof"){
+    opp_1.offset.y = 90;
+}
+if(opp_2.name === "wizard" && background_use.name === "roof"){
+    opp_2.offset.y = 90;
+}
+
+//the offset for the forest background
+
+if(opp_1.name === "Evil wizard" && background_use.name === "forest"){
+    opp_1.offset.y = 285;
+}
+if(opp_2.name === "Evil wizard" && background_use.name === "forest"){
+    opp_2.offset.y = 285;
+}
+if(opp_1.name === "Knight" && background_use.name === "forest"){
+    opp_1.offset.y = 100;
+}
+if(opp_2.name === "Knight" && background_use.name === "forest"){
+    opp_2.offset.y = 100;
+}
+if(opp_1.name === "king" && background_use.name === "forest"){
+    opp_1.offset.y = 100;
+}
+if(opp_2.name === "king" && background_use.name === "forest"){
+    opp_2.offset.y = 100;
+}
+if(opp_1.name === "samurai" && background_use.name === "forest"){
+    opp_1.offset.y = 160;
+}
+if(opp_2.name === "samurai" && background_use.name === "forest"){
+    opp_2.offset.y = 160;
+}
+if(opp_1.name === "warrior" && background_use.name === "forest"){
+    opp_1.offset.y = 140;
+}
+if(opp_2.name === "warrior" && background_use.name === "forest"){
+    opp_2.offset.y = 140;
+}
+if(opp_1.name === "wizard" && background_use.name === "forest"){
+    opp_1.offset.y = 100;
+}
+if(opp_2.name === "wizard" && background_use.name === "forest"){
+    opp_2.offset.y =100;
+}
+
 canvas.width = 1024;
 canvas.height = 576;
-C.fillRect(0 , 0 , canvas.width , canvas.height)
+C.fillRect(0 , 0 , canvas.width , canvas.height);
 
-var gravity = 0.5
+var gravity = 0.5;
 
 const background = new sprite({
     position:{
-        x:0,
-        y:0
+        x:background_use.position.x,
+        y:background_use.position.y
     },
-    imageSrc: './img/background.png'
+    imageSrc: background_use.need.imgSrc,
+
 })
 
-const shop = new sprite({
+//the shop
+if(background_use.need.Shop){
+    var shop_put = new sprite({
     position:{
         x:600,
         y:129
@@ -39,6 +121,8 @@ const shop = new sprite({
     scale: 2.75, 
     framemax : 6
 })
+}
+
 
 
 const player = new Fighter({
@@ -214,7 +298,10 @@ function animate(){
     C.fillStyle = 'black';
     C.fillRect(0, 0,canvas.width, canvas.height);
     background.update();
-    shop.update();
+    if(background_use.need.Shop){
+        shop_put.update();
+    }
+    
     C.fillStyle = 'rgba(255,255,255,0.15)';
     C.fillRect(0,0 , canvas.width , canvas.height);
     player.update();
@@ -312,6 +399,8 @@ if (
     if(enemy.health<=0){
         enemy.switchsprite('death');
     }
+
+
 }
 
 animate()

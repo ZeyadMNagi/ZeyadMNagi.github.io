@@ -8,6 +8,7 @@
 }
 body{
     background: #233;
+
 }
 .container
 {
@@ -16,6 +17,7 @@ body{
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
 }
 .pop-up
 {
@@ -83,4 +85,62 @@ h2
 input
 {
     padding: 12px;
+}
+.images
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.images img
+{
+    margin: 7px;
+    
+}
+.names
+{
+    text-align: center;
+    align-items: center;
+}
+.input
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.g
+{
+    display: flex;
+
+}
+input
+{
+    margin: 10px;
+}
+.start
+{
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.b
+{
+    align-items: center;
+    text-align: center;
+}
+#start
+{
+    margin: 25px;
+    padding: 8px;
+}
+h4
+{
+    margin: 10px;
+    color: #000;
+    background: rgba(206, 18, 18, 0.884);
+    padding: 10px;
+    width: 50%;
+    opacity: 0;
 }
