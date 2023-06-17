@@ -589,7 +589,7 @@ const background_3 = new Background({
         y:0
     },
     need:{
-        imgSrc:"./img/backgroundf.png",
+        imgSrc:"./img/Backgroundf.png",
         Shop : false
 
     },
