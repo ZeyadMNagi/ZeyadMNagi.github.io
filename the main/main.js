@@ -16,7 +16,10 @@ var canPress = true;
 var canAttack_P = true;
 var canAttack_E = true;
 
-
+var playerJump = true;
+var enemyJump = true;
+var player_onGround = true;
+var enemy_onGround = true;
 
 //offset for the roof background
 if(opp_1.name === "Evil wizard" && background_use.name === "roof"){
@@ -399,7 +402,24 @@ if (
     if(enemy.health<=0){
         enemy.switchsprite('death');
     }
+    if(player.position.y ===  330){
+        player_onGround = true;
+    }
 
+    if (!playerJump && player.velocity.y == 0&& player_onGround) {
+        playerJump = true;
+        player_onGround = false;
+    }
+
+
+    if(enemy.position.y ===  330){
+        enemy_onGround = true;
+    }
+
+    if (!enemyJump && enemy.velocity.y == 0&& enemy_onGround) {
+        enemyJump = true;
+        enemy_onGround = false;
+    }
 
 }
 
@@ -419,8 +439,12 @@ window.addEventListener('keydown' , (event) =>{
                 canAttack_P = false;
                 break
             case 'w':
-                keys.w.pressed = true;
-                player.velocity.y = -15;
+                if (playerJump) {
+                    keys.w.pressed = true;
+                    player.velocity.y = -15;     
+                    playerJump = false;           
+                }
+
                 break
             case 's':
                 if(canAttack_P)
@@ -446,8 +470,12 @@ window.addEventListener('keydown' , (event) =>{
             canAttack_E = false;
             break
         case 'ArrowUp':
+            if(enemyJump){
+                keys.ArrowUp.pressed = true;
+                enemy.velocity.y = -15;
+                enemyJump = false;       
+            }
 
-            enemy.velocity.y = -15;
             break 
         case 'ArrowDown':
             if(canAttack_E)

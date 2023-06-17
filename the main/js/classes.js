@@ -66,7 +66,8 @@ class Fighter extends sprite{
         framemax = 1,
         offset = {x:0,y:0},
         sprites,
-        attackbox ={offset:{},width:undefined,height:undefined}
+        attackbox ={offset:{},width:undefined,height:undefined},
+        
     }) {
         super({
             position,

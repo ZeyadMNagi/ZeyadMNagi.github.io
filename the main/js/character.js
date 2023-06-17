@@ -54,7 +54,6 @@ class Background{
             0,
             this.image.width / this.framemax ,
             this.image.height,
-
             this.position.x ,
             this.position.y- this.offset.y,
             (this.image.width / this.framemax) * this.scale,
