@@ -5,8 +5,13 @@ var btn_sub = document.querySelector("#submit");
 var  h = document.querySelector("h4");
 
 btn_sub.addEventListener("click",()=>{
-  localStorage.setItem("p1_name", playerNamee.value);
-  localStorage.setItem("p2_name", EnemyNamee.value);
+  if(playerNamee.value !== null && EnemyNamee.value !== null){
+      localStorage.setItem("p1_name", playerNamee.value);
+      localStorage.setItem("p2_name", EnemyNamee.value);
+  }else{
+    h.innerHTML = "⛔Please enter your name !!!"
+  }
+
 })
 
 
