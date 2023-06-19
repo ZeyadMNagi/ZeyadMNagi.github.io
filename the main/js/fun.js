@@ -1,6 +1,8 @@
 var E_name = document.getElementById("Ename");
 var P_name = document.getElementById("Pname");
 
+var pop = document.querySelector("#endGame");
+
 var object_1 = localStorage.getItem("player1");
 var opp_1 = JSON.parse(object_1);
 var object_2 = localStorage.getItem("player2");
@@ -12,6 +14,7 @@ var background_use = JSON.parse(background_get)
 var PlayerName = localStorage.getItem("p1_name").toUpperCase();
 var EnemyName = localStorage.getItem("p2_name").toUpperCase();
 
+var isAR = localStorage.getItem("arabic")
 
 P_name.innerHTML = PlayerName;
 E_name.innerHTML = EnemyName;
@@ -31,16 +34,31 @@ function retangularcollision({ rectangle1, rectangle2 }) {
   }
 function determineWinner({player , enemy ,timeid}){
     clearTimeout(timeid);
-    if(player.health === enemy.health  ){
+    pop.style.display = "flex"
+    if (!isAR) {
+      if(player.health === enemy.health  ){
         document.querySelector('#result').innerHTML = 'TIE';
         document.querySelector('#result').style.display = 'flex';
-     }else if(player.health > enemy.health ){
+      }else if(player.health > enemy.health ){
         document.querySelector('#result').innerHTML = PlayerName + ' WIN';
         document.querySelector('#result').style.display = 'flex';
-     }else if(player.health < enemy.health){
+      }else if(player.health < enemy.health){
         document.querySelector('#result').innerHTML = EnemyName + ' WIN';
         document.querySelector('#result').style.display = 'flex';
      }
+    }else{
+      if(player.health === enemy.health  ){
+        document.querySelector('#result').innerHTML = 'تعادل';
+        document.querySelector('#result').style.display = 'flex';
+      }else if(player.health > enemy.health ){
+        document.querySelector('#result').innerHTML = PlayerName + ' فاز';
+        document.querySelector('#result').style.display = 'flex';
+      }else if(player.health < enemy.health){
+        document.querySelector('#result').innerHTML = EnemyName + ' فاز';
+        document.querySelector('#result').style.display = 'flex';
+     }
+    }
+    
      retangularcollision;
 }
 
@@ -64,3 +82,14 @@ function decrease(){
   }
 };
 
+function playAgain(){
+  window.location.href = "index.html";
+}
+function change(){
+  window.location.href = "../choose.html";
+}
+
+if(isAR){
+  document.querySelector("#playagain").innerHTML = "العب مجددا";
+  document.querySelector("#change").innerHTML = "تغير الشخصيه";
+}

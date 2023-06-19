@@ -1,3 +1,103 @@
+*{
+  box-sizing: border-box;
+}
+body
+{
+  background: #022;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Press Start 2P', arial;
+}
+.container
+{
+  position: relative;
+  display: inline-block;
+  /* width: 100%; */
+}
+.comp
+{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 20px;
+}
+.player
+{
+  position:relative; 
+  width:100%;
+  display:flex ;
+  justify-content: flex-end;
+  border: 5px solid white;
+}
+.phealth
+{
+  background-color : rgb(155, 25, 25);
+  height: 30px;
+  width: 100%;
+}
+#ol-heal
+{
+  position: absolute;
+  background: #818cf8;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+#timer
+{
+  background-color : black ;
+  width:100px;
+  height : 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border: 5px solid white;
+  font-family: 'Press Start 2P', cursive;
+  font-size: x-large;
+}
+.enemy
+{
+  position:relative;
+  width:100%;
+  border: 5px solid white;
+}
+.ehealth
+{
+  background-color : rgb(155, 25, 25);
+  height: 30px;
+  width: 100%;
+}
+#en-heal
+{
+  position: absolute;
+  background: #818cf8;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#result
+{
+  text-align: center;
+  /* position:absolute; */
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  /* top: 0; */
+  /* right: 0; */
+  /* bottom: 0; */
+  /* left: 0; */
+  font-size: 50px;
+  width: 500;
+  font-weight: 700;
+  display: none;
+}
 #Pname,#Ename{
   text-align: center;
   font-family: 'Press Start 2P', arial;  
@@ -8,10 +108,41 @@
 
 .creator
 {
+  position: absolute;
   color: #fff;
   z-index: 9999;
   font-size: 25px;
-  margin-top: -80;
-  margin-left: 20px;
-  font-family: 'Press Start 2P', cursive;  
+  bottom: 25px;
+  margin-left: 40%;
+  font-family: 'Press Start 2P', arial;
+}
+#endGame
+{
+  margin: 10% 22%;
+  flex-direction: column;
+  padding: 50px;
+  z-index: 99999;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 5px solid #ebebeb;
+  background: #966f05;
+  width: 600px;
+  display: none;
+}
+#endGame button
+{
+  border: 2px solid #ebebeb;
+  background: #966f05;
+  margin: 5px;
+  color: #ebebeb;
+  font-size: 18px;
+  font-weight: 800;
+  transition: .4s;
+}
+#endGame button:hover
+{
+  color: #966f05;
+  background: #ebebeb;
 }

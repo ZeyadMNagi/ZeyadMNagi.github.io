@@ -7,6 +7,7 @@ class Character{
         sprites,
         offset = {x:0,y:0},
         Shop,
+        need,
 
 
     }){
@@ -18,7 +19,7 @@ class Character{
         this.sprites = sprites  ;
         this.offset = offset,
         this.shop = Shop
-
+        this.need = need;
 
         for (const Sprite in this.sprites) {
             sprites[Sprite].image = new Image();
@@ -34,7 +35,8 @@ class Background{
         width,
         height,
         need,
-        name
+        name,
+
     }) {
         this.name = name
         this.need = need
@@ -46,25 +48,18 @@ class Background{
         this.position = position;
         this.framecurrent = 1;
         this.framemax = 1;
+
     }
-    draw(){
-        C.drawImage(
-            this.image ,
-            this.framecurrent * (this.image.width / this.framemax) , 
-            0,
-            this.image.width / this.framemax ,
-            this.image.height,
-            this.position.x ,
-            this.position.y- this.offset.y,
-            (this.image.width / this.framemax) * this.scale,
-            this.image.height * this.scale
-            )
-    }
+
 }
 
 const wizard_1 = new Character({
     name : "wizard",
     scale: 2.2,
+    need:{
+        canJump:true,
+        twoAttack:true
+    },
     offset :{
         x: 150, 
         y: 155
@@ -110,6 +105,10 @@ const wizard_1 = new Character({
 const wizard_2 = new Character({
     name : "wizard",
     scale: 2.2,
+    need:{
+        canJump:true,
+        twoAttack:true
+    },
     offset :{
         x: 250, 
         y: 155
@@ -153,6 +152,10 @@ const wizard_2 = new Character({
 const warrior_1 = new Character({
     name : "warrior",
     scale: 3.5,
+    need:{
+        canJump:true,
+        twoAttack:true
+    },
     offset :{
         x:150, 
         y: 200
@@ -196,6 +199,10 @@ const warrior_1 = new Character({
 const warrior_2 = new Character({
     name : "warrior",
     scale: 3.5,
+    need:{
+        canJump:true,
+        twoAttack:true
+    },
     offset :{
         x:150, 
         y:200
@@ -239,6 +246,10 @@ const warrior_2 = new Character({
 const samurai_1 = new Character({
     name : "samurai",
     scale: 2.9,
+    need:{
+        canJump:true,
+        twoAttack:true
+    },
     offset :{
         x: 250, 
         y: 210
@@ -282,6 +293,10 @@ const samurai_1 = new Character({
 const samurai_2 = new Character({
     name : "samurai",
     scale: 2.9,
+    need:{
+        canJump:true,
+        twoAttack:true
+    },
     offset :{
         x: 250, 
         y: 210
@@ -326,6 +341,10 @@ const samurai_2 = new Character({
 const king_1 = new Character({
     name : "king",
     scale: 3,
+    need:{
+        canJump:true,
+        twoAttack:true
+    },
     offset :{
         x: 250, 
         y: 160
@@ -368,6 +387,10 @@ const king_1 = new Character({
 const king_2 = new Character({
     name : "king",
     scale: 3,
+    need:{
+        canJump:true,
+        twoAttack:true
+    },
     offset :{
         x: 250, 
         y: 160
@@ -411,6 +434,10 @@ const king_2 = new Character({
 const evil_1 = new Character({
     name : "Evil wizard",
     scale: 3,
+    need:{
+        canJump:true,
+        twoAttack:true
+    },
     offset :{
         x: 250, 
         y: 350
@@ -454,6 +481,10 @@ const evil_1 = new Character({
 const evil_2 = new Character({
     name : "Evil wizard",
     scale: 3,
+    need:{
+        canJump:true,
+        twoAttack:true
+    },
     offset :{
         x: 250, 
         y: 350
@@ -497,6 +528,10 @@ const evil_2 = new Character({
 const knight_1 = new Character({
     name : "Knight",
     scale: 3.67,
+    need:{
+        canJump:true,
+        twoAttack:true
+    },
     offset :{
         x: 250, 
         y: 160
@@ -541,6 +576,10 @@ const knight_1 = new Character({
 const knight_2 = new Character({
     name : "Knight",
     scale: 3.67,
+    need:{
+        canJump:true,
+        twoAttack:true
+    },
     offset :{
         x: 250, 
         y: 160
@@ -581,6 +620,287 @@ const knight_2 = new Character({
     }
 })
 
+const fire_wizard_2 = new Character({
+    name : "fire wizard",
+    scale: 3,
+    need:{
+        canJump:false,
+        twoAttack:false
+    },
+    offset :{
+        x: 250, 
+        y: 160
+    },
+    sprites:{
+        idle:{
+            imgSrc:"./img/p10/Idle.png",
+            framemax : 8
+        },
+        run:{
+            imgSrc:"./img/p10/Move.png",
+            framemax : 8
+        },
+        jump:{
+            imgSrc: null,
+            framemax : null
+        },
+        fall:{
+            imgSrc:null,
+            framemax : null
+        },
+        death:{
+            imgSrc:"./img/p10/Death.png",
+            framemax : 5
+        },
+        hit:{
+            imgSrc:"./img/p10/Take Hit.png",
+            framemax : 4
+        },
+        attack1:{
+            imgSrc:"./img/p10/Attack.png",
+            framemax : 8
+        },
+        attack2:{
+            imgSrc:null,
+            framemax : null
+        }
+    }
+
+})
+const fire_wizard_1 = new Character({
+    name : "fire wizard",
+    scale: 3,
+    need:{
+        canJump:false,
+        twoAttack:false
+    },
+    offset :{
+        x: 250, 
+        y: 160
+    },
+    sprites:{
+        idle:{
+            imgSrc:"./img/p9/Idle.png",
+            framemax : 8
+        },
+        run:{
+            imgSrc:"./img/p9/Move.png",
+            framemax : 8
+        },
+        jump:{
+            imgSrc: null,
+            framemax : null
+        },
+        fall:{
+            imgSrc:null,
+            framemax : null
+        },
+        death:{
+            imgSrc:"./img/p9/Death.png",
+            framemax : 5
+        },
+        hit:{
+            imgSrc:"./img/p9/Take Hit.png",
+            framemax : 4
+        },
+        attack1:{
+            imgSrc:"./img/p9/Attack.png",
+            framemax : 8
+        },
+        attack2:{
+            imgSrc:null,
+            framemax : null
+        }
+    }
+
+})
+const goblin_1 = new Character({
+    name : "goblin",
+    scale: 3,
+    need:{
+        canJump:false,
+        twoAttack:true
+    },
+    offset :{
+        x: 250, 
+        y: 150
+    },
+    sprites:{
+        idle:{
+            imgSrc:"./img/p17/Idle.png",
+            framemax : 4
+        },
+        run:{
+            imgSrc:"./img/p17/Run.png",
+            framemax : 8
+        },
+        jump:{
+            imgSrc: null,
+            framemax : null
+        },
+        fall:{
+            imgSrc:null,
+            framemax : null
+        },
+        death:{
+            imgSrc:"./img/p17/Death.png",
+            framemax : 4
+        },
+        hit:{
+            imgSrc:"./img/p17/Take Hit.png",
+            framemax : 4
+        },
+        attack1:{
+            imgSrc:"./img/p17/Attack.png",
+            framemax : 8
+        },
+        attack2:{
+            imgSrc: "./img/p17/Attack2.pn",
+            framemax : 8
+        }
+    }
+
+})
+const goblin_2 = new Character({
+    name : "goblin",
+    scale: 3,
+    need:{
+        canJump:false,
+        twoAttack:true
+    },
+    offset :{
+        x: 250, 
+        y: 150
+    },
+    sprites:{
+        idle:{
+            imgSrc:"./img/p18/Idle.png",
+            framemax : 4
+        },
+        run:{
+            imgSrc:"./img/p18/Run.png",
+            framemax : 8
+        },
+        jump:{
+            imgSrc: null,
+            framemax : null
+        },
+        fall:{
+            imgSrc:null,
+            framemax : null
+        },
+        death:{
+            imgSrc:"./img/p18/Death.png",
+            framemax : 4
+        },
+        hit:{
+            imgSrc:"./img/p18/Take Hit.png",
+            framemax : 4
+        },
+        attack1:{
+            imgSrc:"./img/p18/Attack.png",
+            framemax : 8
+        },
+        attack2:{
+            imgSrc: "./img/p18/Attack2.png",
+            framemax : 8
+        }
+    }
+})
+const skeleton_1= new Character({
+    name : "skeleton",
+    scale: 3,
+    need:{
+        canJump:false,
+        twoAttack:true
+    },
+    offset :{
+        x: 250, 
+        y: 150
+    },
+    sprites:{
+        idle:{
+            imgSrc:"./img/p19/Idle.png",
+            framemax : 4
+        },
+        run:{
+            imgSrc:"./img/p19/Walk.png",
+            framemax : 4
+        },
+        jump:{
+            imgSrc: null,
+            framemax : null
+        },
+        fall:{
+            imgSrc:null,
+            framemax : null
+        },
+        death:{
+            imgSrc:"./img/p19/Death.png",
+            framemax : 4
+        },
+        hit:{
+            imgSrc:"./img/p19/Take Hit.png",
+            framemax : 4
+        },
+        attack1:{
+            imgSrc:"./img/p19/Attack.png",
+            framemax : 8
+        },
+        attack2:{
+            imgSrc: "./img/p19/Attack2.png",
+            framemax : 8
+        }
+    }
+})
+const skeleton_2= new Character({
+    name : "skeleton",
+    scale: 3,
+    need:{
+        canJump:false,
+        twoAttack:true
+    },
+    offset :{
+        x: 250, 
+        y: 150
+    },
+    sprites:{
+        idle:{
+            imgSrc:"./img/p20/Idle.png",
+            framemax : 4
+        },
+        run:{
+            imgSrc:"./img/p20/Walk.png",
+            framemax : 4
+        },
+        jump:{
+            imgSrc: null,
+            framemax : null
+        },
+        fall:{
+            imgSrc:null,
+            framemax : null
+        },
+        death:{
+            imgSrc:"./img/p20/Death.png",
+            framemax : 4
+        },
+        hit:{
+            imgSrc:"./img/p20/Take Hit.png",
+            framemax : 4
+        },
+        attack1:{
+            imgSrc:"./img/p20/Attack.png",
+            framemax : 8
+        },
+        attack2:{
+            imgSrc: "./img/p20/Attack2.png",
+            framemax : 8
+        }
+    }
+})
+
+
 const background_3 = new Background({
     name:"forest",
     position:{
@@ -589,12 +909,12 @@ const background_3 = new Background({
     },
     need:{
         imgSrc:"./img/Backgroundf.png",
-        Shop : false
-
+        Shop : false,
+        width: 1200,
+        height: 600,
     },
-    scale:1.2,
-    width:1024,
-    height:576,
+    scale: 1.2,
+
 })
 const background_2 = new Background({
     name: "main",
@@ -606,11 +926,9 @@ const background_2 = new Background({
         imgSrc:"./img/background.png",
         Shop:true    
     },
-    
     scale:1.2,
     width:1024,
     height:576,
-
 })
 const background_1 = new Background({
     name: "roof",
@@ -622,10 +940,7 @@ const background_1 = new Background({
         imgSrc:"./img/background.jpg",
         Shop:false
     },
-
     scale:1.2,
     width:1024,
     height:576,
-
 })
-

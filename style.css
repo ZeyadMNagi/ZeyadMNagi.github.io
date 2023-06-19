@@ -2,18 +2,19 @@
 *
 {
     margin: 0;
-    
+    font-size: 20px;
     box-sizing: border-box;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', Arial;
 }
 body{
     background: #233;
-
+    height: 100%;
+    overflow: hidden;
 }
 .container
 {
     width: 100%;
-    height: 100;
+    height: 100%;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -21,12 +22,15 @@ body{
 }
 .pop-up
 {
+    display: flex;
+    flex-direction: column;
     background: rgba(184, 136, 4, 0.808);
     width: 80%;
-    height: 100;
+    height: 100%;
     border: 5px solid wheat;
     border-radius: 9px;
-    
+    align-items: center;
+    justify-content: center;
 }
 label
 {
@@ -54,8 +58,9 @@ img
     width: 200px;
     height: 200px;
     object-fit: cover;
+    
 }
-img:hover
+.images img:hover , td img:hover
 {
     border: 2px solid #fff;
     border-radius: 5px;
@@ -95,7 +100,7 @@ input
 .images img
 {
     margin: 7px;
-    
+    border-radius: 12px;
 }
 .names
 {
@@ -108,6 +113,7 @@ input
     flex-direction: column;
     align-items: center;
     text-align: center;
+    border-radius: 8px;
 }
 .g
 {
@@ -130,10 +136,23 @@ input
     align-items: center;
     text-align: center;
 }
-#start
+button
 {
+    color: #ebebeb;
+    font-size: 15px;
+    font-weight: 700;
     margin: 25px;
     padding: 8px;
+    border: 3px solid #ebebeb;
+    background: #966f05ce;
+    transition: .4s;
+}
+button:hover
+{
+    font-size: 18px;
+    color: #966f05ce;
+    background: #ebebeb;
+    padding: 10px;
 }
 h4
 {
@@ -141,6 +160,55 @@ h4
     color: #111;
     background: rgba(206, 18, 18, 0.884);
     padding: 10px;
-    width: 50%;
+    width: 100%;
     opacity: 0;
+}
+.lang
+{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background: #be8f0d;
+    border: 5px solid #ebebeb;
+    top: 10%;
+    border-radius: 12px;
+    left: 30%;
+}
+.btn-lang
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    
+}
+.layer
+{
+    position: absolute;
+    background: #111;
+    top: 0;
+    opacity: .5;
+    width: 100%;
+    height: 250vh;
+}
+@keyframes choose
+{
+    0%{
+        left: 30%;
+    }
+    25%{
+        left: 27%;
+    }
+    50%{
+        left: 33%;
+    }
+    75%{
+        left: 27%;
+    }
+    100%{
+        left: 30%;
+    }
 }
