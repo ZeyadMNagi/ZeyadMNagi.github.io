@@ -83,10 +83,10 @@ function decrease(){
 };
 
 function playAgain(){
-  window.location.href = "index.html";
+  window.location.href = "zeyadmnagi.github.io/the main/index.html";
 }
 function change(){
-  window.location.href = "../choose.html";
+  window.location.href = "zeyadmnagi.github.io/choose.html";
 }
 
 if(isAR){
