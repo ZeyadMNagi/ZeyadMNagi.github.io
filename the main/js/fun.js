@@ -34,7 +34,9 @@ function retangularcollision({ rectangle1, rectangle2 }) {
   }
 function determineWinner({player , enemy ,timeid}){
     clearTimeout(timeid);
-    pop.style.display = "flex"
+    setTimeout(() => {
+      pop.style.display = "flex"
+    }, 1000);
     if (!isAR) {
       if(player.health === enemy.health  ){
         document.querySelector('#result').innerHTML = 'TIE';
@@ -83,10 +85,10 @@ function decrease(){
 };
 
 function playAgain(){
-  window.location.href = "zeyadmnagi.github.io/the main/index.html";
+  window.location.href = "index.html";
 }
 function change(){
-  window.location.href = "zeyadmnagi.github.io/choose.html";
+  window.location.href = "../choose.html";
 }
 
 if(isAR){

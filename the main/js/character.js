@@ -755,7 +755,7 @@ const goblin_1 = new Character({
             framemax : 8
         },
         attack2:{
-            imgSrc: "./img/p17/Attack2.pn",
+            imgSrc: "./img/p17/Attack2.png",
             framemax : 8
         }
     }

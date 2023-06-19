@@ -93,8 +93,8 @@ body
   /* right: 0; */
   /* bottom: 0; */
   /* left: 0; */
-  font-size: 50px;
-  width: 500;
+  /* font-size: 50px; */
+  width: 500px;
   font-weight: 700;
   display: none;
 }
@@ -113,7 +113,7 @@ body
   z-index: 9999;
   font-size: 25px;
   bottom: 25px;
-  margin-left: 40%;
+  margin-left: 30%;
   font-family: 'Press Start 2P', arial;
 }
 #endGame
