@@ -56,6 +56,24 @@ if (opp_1.name === "wizard" && background_use.name === "roof") {
 if (opp_2.name === "wizard" && background_use.name === "roof") {
   opp_2.offset.y = 90;
 }
+if (opp_1.name === "goblin" && background_use.name === "roof") {
+  opp_1.offset.y = 90;
+}
+if (opp_2.name === "goblin" && background_use.name === "roof") {
+  opp_2.offset.y = 90;
+}
+if (opp_1.name === "skeleton" && background_use.name === "roof") {
+  opp_1.offset.y = 90;
+}
+if (opp_2.name === "skeleton" && background_use.name === "roof") {
+  opp_2.offset.y = 90;
+}
+if (opp_1.name === "fire wizard" && background_use.name === "roof") {
+  opp_1.offset.y = 90;
+}
+if (opp_2.name === "fire wizard" && background_use.name === "roof") {
+  opp_2.offset.y = 90;
+}
 
 //the offset for the forest background
 
@@ -93,6 +111,24 @@ if (opp_1.name === "wizard" && background_use.name === "forest") {
   opp_1.offset.y = 100;
 }
 if (opp_2.name === "wizard" && background_use.name === "forest") {
+  opp_2.offset.y = 100;
+}
+if (opp_1.name === "goblin" && background_use.name === "forest") {
+  opp_1.offset.y = 100;
+}
+if (opp_2.name === "goblin" && background_use.name === "forest") {
+  opp_2.offset.y = 100;
+}
+if (opp_1.name === "skeleton" && background_use.name === "forest") {
+  opp_1.offset.y = 100;
+}
+if (opp_2.name === "skeleton" && background_use.name === "forest") {
+  opp_2.offset.y = 100;
+}
+if (opp_1.name === "fire wizard" && background_use.name === "forest") {
+  opp_1.offset.y = 100;
+}
+if (opp_2.name === "fire wizard" && background_use.name === "forest") {
   opp_2.offset.y = 100;
 }
 
