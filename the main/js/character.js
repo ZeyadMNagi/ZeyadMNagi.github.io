@@ -902,10 +902,11 @@ const background_2 = new Background({
   need: {
     imgSrc: "./img/background.png",
     Shop: true,
+    width: 1024,
+    height: 576,
   },
   scale: 1.2,
-  width: 1024,
-  height: 576,
+
 });
 const background_1 = new Background({
   name: "roof",
@@ -916,8 +917,9 @@ const background_1 = new Background({
   need: {
     imgSrc: "./img/background.jpg",
     Shop: false,
+    width: 1024,
+    height: 576,    
   },
   scale: 1.2,
-  width: 1024,
-  height: 576,
+
 });

@@ -20,6 +20,7 @@ var player_onGround = true;
 var enemy_onGround = true;
 
 //offset for the roof background
+
 if (opp_1.name === "Evil wizard" && background_use.name === "roof") {
   opp_1.offset.y = 270;
 }
@@ -141,6 +142,24 @@ var gravity = 0.5;
 const background = new sprite({
   position: {
     x: background_use.position.x,
+    y: background_use.position.y,
+  },
+  imageSrc: background_use.need.imgSrc,
+  width: background_use.need.width,
+  height: background_use.need.height,
+});
+const background1 = new sprite({
+  position: {
+    x: background_use.position.x + background_use.need.width,
+    y: background_use.position.y,
+  },
+  imageSrc: background_use.need.imgSrc,
+  width: background_use.need.width,
+  height: background_use.need.height,
+});
+const background0 = new sprite({
+  position: {
+    x: background_use.position.x - background_use.need.width,
     y: background_use.position.y,
   },
   imageSrc: background_use.need.imgSrc,
@@ -326,7 +345,9 @@ function animate() {
   window.requestAnimationFrame(animate);
   C.fillStyle = "black";
   C.fillRect(0, 0, canvas.width, canvas.height);
+  background0.update();
   background.update();
+  background1.update();
   if (background_use.need.Shop) {
     shop_put.update();
   }
@@ -340,12 +361,53 @@ function animate() {
   enemy.velocity.x = 0;
   //player
 
-  if (keys.a.pressed && player.lastkey === "a"  && player.position.x > -50 ) {
+  if (keys.a.pressed && player.lastkey === "a" && player.position.x > 40) {
     player.velocity.x = -5;
     player.switchsprite("run");
-  } else if (keys.d.pressed && player.lastkey === "d" && player.position.x < 800) {
+  } else if (
+    keys.d.pressed &&
+    player.lastkey === "d" &&
+    player.position.x < 1000
+  ) {
     player.velocity.x = 5;
     player.switchsprite("run");
+  } else if (
+    (keys.d.pressed && player.lastkey === "d") ||
+    (keys.a.pressed && player.lastkey === "a")
+  ) {
+    player.switchsprite("run");
+    if (
+      (keys.d.pressed && background1.position.x >= 2 && enemy.position.x >= 50) ||
+      (keys.d.pressed && background0.position.x <= 2  && enemy.position.x >= 50)
+    ) {
+      shop_put.position.x -= 5;
+      background.position.x -= 5;
+      background1.position.x -= 5;
+      background0.position.x -= 5;
+      enemy.position.x -= 5;
+      // player.scale -= 0.002;
+      // enemy.scale -= 0.002;
+    }
+    if (
+      (keys.a.pressed && background1.position.x >= 2 && enemy.position.x <= 980) ||
+      (keys.a.pressed && background0.position.x <= 2 && enemy.position.x <= 980)
+    ) {
+      shop_put.position.x += 5;
+      background.position.x += 5;
+      background1.position.x += 5;
+      background0.position.x += 5;
+      enemy.position.x += 5;
+      // if(enemy.position.x >= 980 &&){
+      //   background.scale -= .005;
+      //   background1.scale -= .005;
+      //   background0.scale -= .005;
+      //   background.position.x += 5;
+      //   background1.position.x += 5;
+      //   background0.position.x += 5;
+      // }
+      // player.scale -= 0.002;
+      // enemy.scale -= 0.002;
+    }
   } else {
     player.switchsprite("idle");
   }
@@ -361,12 +423,46 @@ function animate() {
   }
 
   // Enemy movement
-  if (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft" && enemy.position.x > -50 ) {
+  if (
+    keys.ArrowLeft.pressed &&
+    enemy.lastkey === "ArrowLeft" &&
+    enemy.position.x > 40
+  ) {
     enemy.velocity.x = -5;
     enemy.switchsprite("run");
-  } else if (keys.ArrowRight.pressed && enemy.lastkey === "ArrowRight" && enemy.position.x < 800) {
+  } else if (
+    keys.ArrowRight.pressed &&
+    enemy.lastkey === "ArrowRight" &&
+    enemy.position.x < 1000
+  ) {
     enemy.velocity.x = 5;
     enemy.switchsprite("run");
+  } else if (
+    (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft") ||
+    (keys.ArrowRight.pressed && enemy.lastkey === "ArrowRight")
+  ) {
+    enemy.switchsprite("run");
+    if (
+      (keys.ArrowRight.pressed && background1.position.x >= 2  && player.position.x >= 50) ||
+      (keys.ArrowRight.pressed && background0.position.x <= 2  && player.position.x >= 50)
+    ) {
+      shop_put.position.x -= 5;
+      background.position.x -= 5;
+      background1.position.x -= 5;
+      background0.position.x -= 5;
+      player.position.x -= 5;
+    }
+    if (
+      (keys.ArrowLeft.pressed && background1.position.x >= 2  && player.position.x <= 980) ||
+      (keys.ArrowLeft.pressed && background0.position.x <= 2 && player.position.x <= 980)
+    ) {
+      shop_put.position.x += 5;
+      background.position.x += 5;
+      background1.position.x += 5;
+      background0.position.x += 5;
+      player.position.x += 5;
+      
+    }
   } else {
     enemy.switchsprite("idle");
   }
