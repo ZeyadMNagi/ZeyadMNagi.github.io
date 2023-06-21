@@ -145,7 +145,7 @@ const background = new sprite({
   },
   imageSrc: background_use.need.imgSrc,
   width: background_use.need.width,
-  height: background_use.need.height
+  height: background_use.need.height,
 });
 
 //the shop
@@ -352,13 +352,13 @@ function animate() {
 
   //jump
 
-if (opp_1.need.canJump) {
+  if (opp_1.need.canJump) {
     if (player.velocity.y < 0) {
       player.switchsprite("jump");
     } else if (player.velocity.y > 0) {
       player.switchsprite("fall");
     }
-}
+  }
 
   // Enemy movement
   if (keys.ArrowLeft.pressed && enemy.lastkey === "ArrowLeft") {
@@ -483,7 +483,7 @@ window.addEventListener("keydown", (event) => {
         break;
       case "e":
         if (opp_1.need.twoAttack) {
-          if (canAttack_P) player.attack2();      
+          if (canAttack_P) player.attack2();
         }
         break;
     }
@@ -513,7 +513,7 @@ window.addEventListener("keydown", (event) => {
         break;
       case "ث":
         if (opp_1.need.twoAttack) {
-          if (canAttack_P) player.attack2();      
+          if (canAttack_P) player.attack2();
         }
         break;
     }
@@ -546,7 +546,7 @@ window.addEventListener("keydown", (event) => {
           break;
         case " ":
           if (opp_2.need.twoAttack) {
-            if (canAttack_P) enemy.attack2();      
+            if (canAttack_P) enemy.attack2();
           }
           break;
       }
@@ -557,29 +557,27 @@ window.addEventListener("keyup", (event) => {
   switch (event.key) {
     case "d":
       keys.d.pressed = false;
-        canAttack_P = true;
-      
-      
+      canAttack_P = true;
+
       break;
     case "a":
       keys.a.pressed = false;
-      
-        canAttack_P = true;
-      
-      
+
+      canAttack_P = true;
+
       break;
     case "w":
       keys.w.pressed = false;
       break;
     case "ي":
       keys.d.pressed = false;
-        canAttack_P = true;
-      
+      canAttack_P = true;
+
       break;
     case "ش":
       keys.a.pressed = false;
-        canAttack_P = true;
-      
+      canAttack_P = true;
+
       break;
     case "ص":
       keys.w.pressed = false;
@@ -590,13 +588,13 @@ window.addEventListener("keyup", (event) => {
       break;
     case "ArrowRight":
       keys.ArrowRight.pressed = false;
-        canAttack_E = true;
-      
+      canAttack_E = true;
+
       break;
     case "ArrowLeft":
       keys.ArrowLeft.pressed = false;
-        canAttack_E = true;
-      
+      canAttack_E = true;
+
       break;
   }
 });

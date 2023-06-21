@@ -1,5 +1,4 @@
-*
-{
+* {
     margin: 0;
     box-sizing: border-box;
     font-family: 'Press Start 2P', Arial;
@@ -8,27 +7,27 @@
 /* width */
 ::-webkit-scrollbar {
     width: 12px;
-  }
-  
+}
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 8px;
 }
-  
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-  
 
-body{
+
+body {
     background: #233;
     height: 100%;
     overflow: hidden;
 }
-.container
-{
+
+.container {
     width: 100%;
     height: 100%;
     align-items: center;
@@ -36,8 +35,8 @@ body{
     display: flex;
     flex-direction: column;
 }
-.pop-up
-{
+
+.pop-up {
     display: flex;
     flex-direction: column;
     background: rgba(184, 136, 4, 0.808);
@@ -48,55 +47,58 @@ body{
     align-items: center;
     justify-content: center;
 }
-label
-{
+
+label {
     text-align: center;
 }
-h1
-{
+
+h1 {
     color: #fff;
     font-size: 22px;
     padding: 15px;
 
 }
-th,td,tr
-{
+
+th,
+td,
+tr {
     padding: 10px;
 }
-.table
-{
+
+.table {
     align-items: center;
     justify-content: center;
     display: flex;
     padding: auto;
 }
-img
-{
+
+img {
     width: 200px;
     height: 200px;
     object-fit: cover;
-    
+
 }
-.images img:hover , td img:hover
-{
+
+.images img:hover,
+td img:hover {
     border: 2px solid #fff;
     border-radius: 5px;
 }
 
-.con{
+.con {
     text-align: center;
     justify-content: center;
     align-items: center;
-    
+
 }
-h2
-{
+
+h2 {
     color: #fff;
     font-size: xx-large;
     padding: 15px;
 }
-.done
-{
+
+.done {
     margin-top: 120px;
     padding: 12px;
     text-decoration: none;
@@ -104,57 +106,57 @@ h2
     background: #6ef011;
     border-radius: 9px;
 }
-input
-{
+
+input {
     padding: 12px;
 }
-.images
-{
+
+.images {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.images img
-{
+
+.images img {
     margin: 7px;
     border-radius: 12px;
 }
-.names
-{
+
+.names {
     text-align: center;
     align-items: center;
 }
-.input
-{
+
+.input {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     border-radius: 8px;
 }
-.g
-{
+
+.g {
     display: flex;
 
 }
-input
-{
+
+input {
     margin: 10px;
 }
-.start
-{
+
+.start {
     align-items: center;
     text-align: center;
     display: flex;
     flex-direction: column;
 }
-.b
-{
+
+.b {
     align-items: center;
     text-align: center;
 }
-button
-{
+
+button {
     color: #ebebeb;
     font-size: 15px;
     font-weight: 700;
@@ -164,15 +166,15 @@ button
     background: #966f05ce;
     transition: .4s;
 }
-button:hover
-{
+
+button:hover {
     font-size: 18px;
     color: #966f05ce;
     background: #ebebeb;
     padding: 10px;
 }
-h4
-{
+
+h4 {
     margin: 10px;
     color: #111;
     background: rgba(206, 18, 18, 0.884);
@@ -180,8 +182,8 @@ h4
     width: 100%;
     opacity: 0;
 }
-.lang
-{
+
+.lang {
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -196,16 +198,16 @@ h4
     left: 30%;
     width: 600px;
 }
-.btn-lang
-{
+
+.btn-lang {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 80%;
-    
+
 }
-.layer
-{
+
+.layer {
     position: absolute;
     background: #111;
     top: 0;
@@ -213,21 +215,25 @@ h4
     width: 100%;
     height: 330vh;
 }
-@keyframes choose
-{
-    0%{
+
+@keyframes choose {
+    0% {
         left: 30%;
     }
-    25%{
+
+    25% {
         left: 27%;
     }
-    50%{
+
+    50% {
         left: 33%;
     }
-    75%{
+
+    75% {
         left: 27%;
     }
-    100%{
+
+    100% {
         left: 30%;
     }
 }
