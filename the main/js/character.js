@@ -886,10 +886,10 @@ const background_3 = new Background({
     y: 0,
   },
   need: {
-    imgSrc: "./img/Backgroundf.png",
+    imgSrc: "./img/Backgroundf.jpeg",
     Shop: false,
-    width: 1200,
-    height: 600,
+    width: 1024,
+    height: 576,
   },
   scale: 1.2,
 });

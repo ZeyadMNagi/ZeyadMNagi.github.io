@@ -79,58 +79,58 @@ if (opp_2.name === "fire wizard" && background_use.name === "roof") {
 //the offset for the forest background
 
 if (opp_1.name === "Evil wizard" && background_use.name === "forest") {
-  opp_1.offset.y = 285;
+  opp_1.offset.y = 310;
 }
 if (opp_2.name === "Evil wizard" && background_use.name === "forest") {
-  opp_2.offset.y = 285;
+  opp_2.offset.y = 310;
 }
 if (opp_1.name === "Knight" && background_use.name === "forest") {
-  opp_1.offset.y = 100;
+  opp_1.offset.y = 110;
 }
 if (opp_2.name === "Knight" && background_use.name === "forest") {
-  opp_2.offset.y = 100;
+  opp_2.offset.y = 110;
 }
 if (opp_1.name === "king" && background_use.name === "forest") {
-  opp_1.offset.y = 100;
+  opp_1.offset.y = 110;
 }
 if (opp_2.name === "king" && background_use.name === "forest") {
-  opp_2.offset.y = 100;
+  opp_2.offset.y = 110;
 }
 if (opp_1.name === "samurai" && background_use.name === "forest") {
-  opp_1.offset.y = 160;
+  opp_1.offset.y = 170;
 }
 if (opp_2.name === "samurai" && background_use.name === "forest") {
-  opp_2.offset.y = 160;
+  opp_2.offset.y = 170;
 }
 if (opp_1.name === "warrior" && background_use.name === "forest") {
-  opp_1.offset.y = 140;
+  opp_1.offset.y = 150;
 }
 if (opp_2.name === "warrior" && background_use.name === "forest") {
-  opp_2.offset.y = 140;
+  opp_2.offset.y = 150;
 }
 if (opp_1.name === "wizard" && background_use.name === "forest") {
-  opp_1.offset.y = 100;
+  opp_1.offset.y = 110;
 }
 if (opp_2.name === "wizard" && background_use.name === "forest") {
-  opp_2.offset.y = 100;
+  opp_2.offset.y = 110;
 }
 if (opp_1.name === "goblin" && background_use.name === "forest") {
-  opp_1.offset.y = 100;
+  opp_1.offset.y = 110;
 }
 if (opp_2.name === "goblin" && background_use.name === "forest") {
-  opp_2.offset.y = 100;
+  opp_2.offset.y = 110;
 }
 if (opp_1.name === "skeleton" && background_use.name === "forest") {
-  opp_1.offset.y = 100;
+  opp_1.offset.y = 110;
 }
 if (opp_2.name === "skeleton" && background_use.name === "forest") {
-  opp_2.offset.y = 100;
+  opp_2.offset.y = 110;
 }
 if (opp_1.name === "fire wizard" && background_use.name === "forest") {
-  opp_1.offset.y = 100;
+  opp_1.offset.y = 110;
 }
 if (opp_2.name === "fire wizard" && background_use.name === "forest") {
-  opp_2.offset.y = 100;
+  opp_2.offset.y = 110;
 }
 
 canvas.width = 1024;
@@ -367,7 +367,7 @@ function animate() {
   } else if (
     keys.d.pressed &&
     player.lastkey === "d" &&
-    player.position.x < 1000
+    player.position.x < 900
   ) {
     player.velocity.x = 5;
     player.switchsprite("run");
@@ -377,10 +377,11 @@ function animate() {
   ) {
     player.switchsprite("run");
     if (
-      (keys.d.pressed && background1.position.x >= 2 && enemy.position.x >= 50) ||
-      (keys.d.pressed && background0.position.x <= 2  && enemy.position.x >= 50)
+      (keys.d.pressed && background1.position.x >= 0 && enemy.position.x >= 50)
     ) {
-      shop_put.position.x -= 5;
+      if(shop_put){
+        shop_put.position.x -= 5;
+      }
       background.position.x -= 5;
       background1.position.x -= 5;
       background0.position.x -= 5;
@@ -389,10 +390,11 @@ function animate() {
       // enemy.scale -= 0.002;
     }
     if (
-      (keys.a.pressed && background1.position.x >= 2 && enemy.position.x <= 980) ||
-      (keys.a.pressed && background0.position.x <= 2 && enemy.position.x <= 980)
+      (keys.a.pressed && background0.position.x <= 0 && enemy.position.x <= 900)
     ) {
-      shop_put.position.x += 5;
+      if(shop_put){
+        shop_put.position.x += 5;
+      }
       background.position.x += 5;
       background1.position.x += 5;
       background0.position.x += 5;
@@ -433,7 +435,7 @@ function animate() {
   } else if (
     keys.ArrowRight.pressed &&
     enemy.lastkey === "ArrowRight" &&
-    enemy.position.x < 1000
+    enemy.position.x < 900
   ) {
     enemy.velocity.x = 5;
     enemy.switchsprite("run");
@@ -443,20 +445,24 @@ function animate() {
   ) {
     enemy.switchsprite("run");
     if (
-      (keys.ArrowRight.pressed && background1.position.x >= 2  && player.position.x >= 50) ||
-      (keys.ArrowRight.pressed && background0.position.x <= 2  && player.position.x >= 50)
+      (keys.ArrowRight.pressed && background1.position.x >= 0  && player.position.x <= 900) 
+      
     ) {
-      shop_put.position.x -= 5;
+      if(shop_put){
+        shop_put.position.x -= 5;
+      }
+      
       background.position.x -= 5;
       background1.position.x -= 5;
       background0.position.x -= 5;
       player.position.x -= 5;
     }
     if (
-      (keys.ArrowLeft.pressed && background1.position.x >= 2  && player.position.x <= 980) ||
-      (keys.ArrowLeft.pressed && background0.position.x <= 2 && player.position.x <= 980)
+      (keys.ArrowLeft.pressed && background0.position.x <= 0  && player.position.x >= 50)
     ) {
-      shop_put.position.x += 5;
+      if(shop_put){
+        shop_put.position.x += 5;
+      }
       background.position.x += 5;
       background1.position.x += 5;
       background0.position.x += 5;
