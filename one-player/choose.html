@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>single player mode</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="pop-up">
+            <img src="../img/logo.png" alt="Logo">
+            <section>
+                <label>
+                    <h1>Choose your character</h1>
+                </label>
+
+                <table>
+                    <tr>
+                        <td>
+                            <img src="../img/img/p1/preview.png" onclick="choose(this)" id="p1" alt="wizard">
+                            <img src="../img/img/p3/preview.png" onclick="choose(this)" id="p3" alt="warrior">
+                            <img src="../img/img/p5/preview.png" onclick="choose(this)" id="p5" alt="samurai">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="../img/img/p7/preview.png" onclick="choose(this)" id="p7" alt="king">
+                            <img src="../img/img/p9/preview.png" onclick="choose(this)" id="p9" alt="fire wizard">
+                            <img src="../img/img/p13/Idle (2).png" onclick="choose(this)" id="p13" alt="evil wizard">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="../img/img/p15/Idle (2).png" onclick="choose(this)" id="p15" alt="knight">
+                            <img src="../img/img/p17/preview.png" onclick="choose(this)" id="p17" alt="goblin">
+                            <img src="../img/img/p19/preview.png" onclick="choose(this)" id="p19" alt="skeleton">
+                        </td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <div class="background">
+                    <label>
+                        <h1>Choose the background</h1>
+                    </label>
+                    <img id="img1" onclick="choose_background(this)" src="../img/img/background.jpg" alt="roof">
+                    <img id="img2" onclick="choose_background(this)" src="../img/img/background.png" alt="main">
+                    <img id="img3" onclick="choose_background(this)" src="../img/img/Backgroundf.jpeg" alt="forest">
+                </div>
+            </section>
+
+            <section>
+                <div class="difficulty">
+                    <label>
+                        <h1>Game difficulty</h1>
+                    </label>
+                    <nav>
+                        <a id="dE">Easy</a>
+                        <a id="dN" class="active">Normal</a>
+                        <a id="dH">Hard</a>
+                    </nav>
+                </div>
+            </section>
+
+            <div class="b">
+                <button onclick="start()">Start the Fight</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="../two-player/the main/js/character.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

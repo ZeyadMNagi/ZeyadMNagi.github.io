@@ -8,6 +8,7 @@ class Character {
     offset = {x: 0, y: 0},
     Shop,
     need,
+    attackbox
   }) {
     this.name = name;
     this.image = new Image();
@@ -17,6 +18,7 @@ class Character {
     this.sprites = sprites;
     (this.offset = offset), (this.shop = Shop);
     this.need = need;
+    this.attackbox = attackbox;
 
     for (const Sprite in this.sprites) {
       sprites[Sprite].image = new Image();
@@ -45,44 +47,53 @@ const wizard_1 = new Character({
   need: {
     canJump: true,
     twoAttack: true,
+    faceR: true,
   },
   offset: {
-    x: 150,
+    x: 220,
     y: 155,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p1/Idle.png",
+      imgSrc: "../../img/img/p1/Idle.png",
       framemax: 6,
     },
     run: {
-      imgSrc: "./img/p1/Run.png",
+      imgSrc: "../../img/img/p1/Run.png",
       framemax: 8,
     },
     jump: {
-      imgSrc: "./img/p1/Jump.png",
+      imgSrc: "../../img/img/p1/Jump.png",
       framemax: 2,
     },
     fall: {
-      imgSrc: "./img/p1/Fall.png",
+      imgSrc: "../../img/img/p1/Fall.png",
       framemax: 2,
     },
     death: {
-      imgSrc: "./img/p1/Death.png",
+      imgSrc: "../../img/img/p1/Death.png",
       framemax: 7,
     },
     hit: {
-      imgSrc: "./img/p1/Hit.png",
+      imgSrc: "../../img/img/p1/Hit.png",
       framemax: 4,
     },
     attack1: {
-      imgSrc: "./img/p1/Attack1.png",
+      imgSrc: "../../img/img/p1/Attack1.png",
       framemax: 8,
     },
     attack2: {
-      imgSrc: "./img/p1/Attack2.png",
+      imgSrc: "../../img/img/p1/Attack2.png",
       framemax: 8,
     },
+  },
+  attackbox: {
+    offset: {
+      x: 50,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 
@@ -92,6 +103,7 @@ const wizard_2 = new Character({
   need: {
     canJump: true,
     twoAttack: true,
+    faceR: false,
   },
   offset: {
     x: 250,
@@ -99,37 +111,45 @@ const wizard_2 = new Character({
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p2/Idle.png",
+      imgSrc: "../../img/img/p2/Idle.png",
       framemax: 6,
     },
     run: {
-      imgSrc: "./img/p2/Run.png",
+      imgSrc: "../../img/img/p2/Run.png",
       framemax: 8,
     },
     jump: {
-      imgSrc: "./img/p2/Jump.png",
+      imgSrc: "../../img/img/p2/Jump.png",
       framemax: 2,
     },
     fall: {
-      imgSrc: "./img/p2/Fall.png",
+      imgSrc: "../../img/img/p2/Fall.png",
       framemax: 2,
     },
     death: {
-      imgSrc: "./img/p2/Death.png",
+      imgSrc: "../../img/img/p2/Death.png",
       framemax: 7,
     },
     hit: {
-      imgSrc: "./img/p2/Hit.png",
+      imgSrc: "../../img/img/p2/Hit.png",
       framemax: 4,
     },
     attack1: {
-      imgSrc: "./img/p2/Attack1.png",
+      imgSrc: "../../img/img/p2/Attack1.png",
       framemax: 8,
     },
     attack2: {
-      imgSrc: "./img/p2/Attack2.png",
+      imgSrc: "../../img/img/p2/Attack2.png",
       framemax: 8,
     },
+  },
+  attackbox: {
+    offset: {
+      x: -170,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 
@@ -139,44 +159,53 @@ const warrior_1 = new Character({
   need: {
     canJump: true,
     twoAttack: true,
+    faceR: true,
   },
   offset: {
-    x: 150,
+    x: 260,
     y: 200,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p3/Idle.png",
+      imgSrc: "../../img/img/p3/Idle.png",
       framemax: 10,
     },
     run: {
-      imgSrc: "./img/p3/Run.png",
+      imgSrc: "../../img/img/p3/Run.png",
       framemax: 8,
     },
     jump: {
-      imgSrc: "./img/p3/Jump.png",
+      imgSrc: "../../img/img/p3/Jump.png",
       framemax: 3,
     },
     fall: {
-      imgSrc: "./img/p3/Fall.png",
+      imgSrc: "../../img/img/p3/Fall.png",
       framemax: 3,
     },
     death: {
-      imgSrc: "./img/p3/Death.png",
+      imgSrc: "../../img/img/p3/Death.png",
       framemax: 7,
     },
     hit: {
-      imgSrc: "./img/p3/Take hit.png",
+      imgSrc: "../../img/img/p3/Take hit.png",
       framemax: 3,
     },
     attack1: {
-      imgSrc: "./img/p3/Attack1.png",
+      imgSrc: "../../img/img/p3/Attack1.png",
       framemax: 7,
     },
     attack2: {
-      imgSrc: "./img/p3/Attack2.png",
+      imgSrc: "../../img/img/p3/Attack2.png",
       framemax: 7,
     },
+  },
+  attackbox: {
+    offset: {
+      x: 50,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 
@@ -186,44 +215,53 @@ const warrior_2 = new Character({
   need: {
     canJump: true,
     twoAttack: true,
+    faceR: false,
   },
   offset: {
-    x: 150,
+    x: 255,
     y: 200,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p4/Idle.png",
+      imgSrc: "../../img/img/p4/Idle.png",
       framemax: 10,
     },
     run: {
-      imgSrc: "./img/p4/Run.png",
+      imgSrc: "../../img/img/p4/Run.png",
       framemax: 8,
     },
     jump: {
-      imgSrc: "./img/p4/Jump.png",
+      imgSrc: "../../img/img/p4/Jump.png",
       framemax: 3,
     },
     fall: {
-      imgSrc: "./img/p4/Fall.png",
+      imgSrc: "../../img/img/p4/Fall.png",
       framemax: 3,
     },
     death: {
-      imgSrc: "./img/p4/Death.png",
+      imgSrc: "../../img/img/p4/Death.png",
       framemax: 7,
     },
     hit: {
-      imgSrc: "./img/p4/Take hit.png",
+      imgSrc: "../../img/img/p4/Take hit.png",
       framemax: 3,
     },
     attack1: {
-      imgSrc: "./img/p4/Attack1.png",
+      imgSrc: "../../img/img/p4/Attack1.png",
       framemax: 7,
     },
     attack2: {
-      imgSrc: "./img/p4/Attack2.png",
+      imgSrc: "../../img/img/p4/Attack2.png",
       framemax: 7,
     },
+  },
+  attackbox: {
+    offset: {
+      x: -150,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 
@@ -233,44 +271,53 @@ const samurai_1 = new Character({
   need: {
     canJump: true,
     twoAttack: true,
+    faceR: true,
   },
   offset: {
-    x: 250,
-    y: 210,
+    x: 270,
+    y: 220,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p5/Idle.png",
+      imgSrc: "../../img/img/p5/Idle.png",
       framemax: 4,
     },
     run: {
-      imgSrc: "./img/p5/Run.png",
+      imgSrc: "../../img/img/p5/Run.png",
       framemax: 8,
     },
     jump: {
-      imgSrc: "./img/p5/Jump.png",
+      imgSrc: "../../img/img/p5/Jump.png",
       framemax: 2,
     },
     fall: {
-      imgSrc: "./img/p5/Fall.png",
+      imgSrc: "../../img/img/p5/Fall.png",
       framemax: 2,
     },
     death: {
-      imgSrc: "./img/p5/Death.png",
+      imgSrc: "../../img/img/p5/Death.png",
       framemax: 7,
     },
     hit: {
-      imgSrc: "./img/p5/Take hit.png",
+      imgSrc: "../../img/img/p5/Take hit.png",
       framemax: 3,
     },
     attack1: {
-      imgSrc: "./img/p5/Attack1.png",
+      imgSrc: "../../img/img/p5/Attack1.png",
       framemax: 4,
     },
     attack2: {
-      imgSrc: "./img/p5/Attack2.png",
+      imgSrc: "../../img/img/p5/Attack2.png",
       framemax: 4,
     },
+  },
+  attackbox: {
+    offset: {
+      x: 50,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 
@@ -280,44 +327,53 @@ const samurai_2 = new Character({
   need: {
     canJump: true,
     twoAttack: true,
+    faceR: false,
   },
   offset: {
-    x: 250,
-    y: 210,
+    x: 255,
+    y: 220,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p6/Idle.png",
+      imgSrc: "../../img/img/p6/Idle.png",
       framemax: 4,
     },
     run: {
-      imgSrc: "./img/p6/Run.png",
+      imgSrc: "../../img/img/p6/Run.png",
       framemax: 8,
     },
     jump: {
-      imgSrc: "./img/p6/Jump.png",
+      imgSrc: "../../img/img/p6/Jump.png",
       framemax: 2,
     },
     fall: {
-      imgSrc: "./img/p6/Fall.png",
+      imgSrc: "../../img/img/p6/Fall.png",
       framemax: 2,
     },
     death: {
-      imgSrc: "./img/p6/Death.png",
+      imgSrc: "../../img/img/p6/Death.png",
       framemax: 7,
     },
     hit: {
-      imgSrc: "./img/p6/Take hit.png",
+      imgSrc: "../../img/img/p6/Take hit.png",
       framemax: 3,
     },
     attack1: {
-      imgSrc: "./img/p6/Attack1.png",
+      imgSrc: "../../img/img/p6/Attack1.png",
       framemax: 4,
     },
     attack2: {
-      imgSrc: "./img/p6/Attack2.png",
+      imgSrc: "../../img/img/p6/Attack2.png",
       framemax: 4,
     },
+  },
+  attackbox: {
+    offset: {
+      x: -150,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 
@@ -327,45 +383,55 @@ const king_1 = new Character({
   need: {
     canJump: true,
     twoAttack: true,
+    faceR: true,
   },
   offset: {
-    x: 250,
+    x: 230,
     y: 160,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p7/Idle.png",
+      imgSrc: "../../img/img/p7/Idle.png",
       framemax: 8,
     },
     run: {
-      imgSrc: "./img/p7/Run.png",
+      imgSrc: "../../img/img/p7/Run.png",
       framemax: 8,
     },
     jump: {
-      imgSrc: "./img/p7/Jump.png",
+      imgSrc: "../../img/img/p7/Jump.png",
       framemax: 2,
     },
     fall: {
-      imgSrc: "./img/p7/Fall.png",
+      imgSrc: "../../img/img/p7/Fall.png",
       framemax: 2,
     },
     death: {
-      imgSrc: "./img/p7/Death.png",
+      imgSrc: "../../img/img/p7/Death.png",
       framemax: 6,
     },
     hit: {
-      imgSrc: "./img/p7/Take hit.png",
+      imgSrc: "../../img/img/p7/Take hit.png",
       framemax: 4,
     },
     attack1: {
-      imgSrc: "./img/p7/Attack1.png",
+      imgSrc: "../../img/img/p7/Attack1.png",
       framemax: 4,
     },
     attack2: {
-      imgSrc: "./img/p7/Attack2.png",
+      imgSrc: "../../img/img/p7/Attack2.png",
       framemax: 4,
     },
   },
+  attackbox: {
+    offset: {
+      x: 50,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
+  },
+
 });
 const king_2 = new Character({
   name: "king",
@@ -373,44 +439,53 @@ const king_2 = new Character({
   need: {
     canJump: true,
     twoAttack: true,
+    faceR: false,
   },
   offset: {
-    x: 250,
+    x: 200,
     y: 160,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p8/Idle.png",
+      imgSrc: "../../img/img/p8/Idle.png",
       framemax: 8,
     },
     run: {
-      imgSrc: "./img/p8/Run.png",
+      imgSrc: "../../img/img/p8/Run.png",
       framemax: 8,
     },
     jump: {
-      imgSrc: "./img/p8/Jump.png",
+      imgSrc: "../../img/img/p8/Jump.png",
       framemax: 2,
     },
     fall: {
-      imgSrc: "./img/p8/Fall.png",
+      imgSrc: "../../img/img/p8/Fall.png",
       framemax: 2,
     },
     death: {
-      imgSrc: "./img/p8/Death.png",
+      imgSrc: "../../img/img/p8/Death.png",
       framemax: 6,
     },
     hit: {
-      imgSrc: "./img/p8/Take hit.png",
+      imgSrc: "../../img/img/p8/Take hit.png",
       framemax: 4,
     },
     attack1: {
-      imgSrc: "./img/p8/Attack1.png",
+      imgSrc: "../../img/img/p8/Attack1.png",
       framemax: 4,
     },
     attack2: {
-      imgSrc: "./img/p8/Attack2.png",
+      imgSrc: "../../img/img/p8/Attack2.png",
       framemax: 4,
     },
+  },
+  attackbox: {
+    offset: {
+      x: -150,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 
@@ -420,44 +495,53 @@ const evil_1 = new Character({
   need: {
     canJump: true,
     twoAttack: true,
+    faceR: true,
   },
   offset: {
-    x: 250,
+    x: 350,
     y: 350,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p13/Idle.png",
+      imgSrc: "../../img/img/p13/Idle.png",
       framemax: 8,
     },
     run: {
-      imgSrc: "./img/p13/Run.png",
+      imgSrc: "../../img/img/p13/Run.png",
       framemax: 8,
     },
     jump: {
-      imgSrc: "./img/p13/Jump.png",
+      imgSrc: "../../img/img/p13/Jump.png",
       framemax: 2,
     },
     fall: {
-      imgSrc: "./img/p13/Fall.png",
+      imgSrc: "../../img/img/p13/Fall.png",
       framemax: 2,
     },
     death: {
-      imgSrc: "./img/p13/Death.png",
+      imgSrc: "../../img/img/p13/Death.png",
       framemax: 7,
     },
     hit: {
-      imgSrc: "./img/p13/Take hit.png",
+      imgSrc: "../../img/img/p13/Take hit.png",
       framemax: 3,
     },
     attack1: {
-      imgSrc: "./img/p13/Attack1.png",
+      imgSrc: "../../img/img/p13/Attack1.png",
       framemax: 8,
     },
     attack2: {
-      imgSrc: "./img/p13/Attack2.png",
+      imgSrc: "../../img/img/p13/Attack2.png",
       framemax: 8,
     },
+  },
+  attackbox: {
+    offset: {
+      x: 50,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 
@@ -467,44 +551,53 @@ const evil_2 = new Character({
   need: {
     canJump: true,
     twoAttack: true,
+    faceR: false,
   },
   offset: {
-    x: 250,
+    x: 350,
     y: 350,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p14/Idle.png",
+      imgSrc: "../../img/img/p14/Idle.png",
       framemax: 8,
     },
     run: {
-      imgSrc: "./img/p14/Run.png",
+      imgSrc: "../../img/img/p14/Run.png",
       framemax: 8,
     },
     jump: {
-      imgSrc: "./img/p14/Jump.png",
+      imgSrc: "../../img/img/p14/Jump.png",
       framemax: 2,
     },
     fall: {
-      imgSrc: "./img/p14/Fall.png",
+      imgSrc: "../../img/img/p14/Fall.png",
       framemax: 2,
     },
     death: {
-      imgSrc: "./img/p14/Death.png",
+      imgSrc: "../../img/img/p14/Death.png",
       framemax: 7,
     },
     hit: {
-      imgSrc: "./img/p14/Take hit.png",
+      imgSrc: "../../img/img/p14/Take hit.png",
       framemax: 3,
     },
     attack1: {
-      imgSrc: "./img/p14/Attack1.png",
+      imgSrc: "../../img/img/p14/Attack1.png",
       framemax: 8,
     },
     attack2: {
-      imgSrc: "./img/p14/Attack2.png",
+      imgSrc: "../../img/img/p14/Attack2.png",
       framemax: 8,
     },
+  },
+  attackbox: {
+    offset: {
+      x: -250,
+      y: 50,
+    },
+    width: 250,
+    height: 50,
   },
 });
 
@@ -514,44 +607,53 @@ const knight_1 = new Character({
   need: {
     canJump: true,
     twoAttack: true,
+    faceR: true,
   },
   offset: {
-    x: 250,
+    x: 230,
     y: 160,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p15/Idle.png",
+      imgSrc: "../../img/img/p15/Idle.png",
       framemax: 10,
     },
     run: {
-      imgSrc: "./img/p15/Run.png",
+      imgSrc: "../../img/img/p15/Run.png",
       framemax: 6,
     },
     jump: {
-      imgSrc: "./img/p15/Jump.png",
+      imgSrc: "../../img/img/p15/Jump.png",
       framemax: 2,
     },
     fall: {
-      imgSrc: "./img/p15/Fall.png",
+      imgSrc: "../../img/img/p15/Fall.png",
       framemax: 2,
     },
     death: {
-      imgSrc: "./img/p15/Death.png",
+      imgSrc: "../../img/img/p15/Death.png",
       framemax: 9,
     },
     hit: {
-      imgSrc: "./img/p15/Get hit.png",
+      imgSrc: "../../img/img/p15/Get hit.png",
       framemax: 3,
     },
     attack1: {
-      imgSrc: "./img/p15/Attack1.png",
+      imgSrc: "../../img/img/p15/Attack1.png",
       framemax: 4,
     },
     attack2: {
-      imgSrc: "./img/p15/Attack2.png",
+      imgSrc: "../../img/img/p15/Attack2.png",
       framemax: 4,
     },
+  },
+  attackbox: {
+    offset: {
+      x: 50,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 
@@ -561,44 +663,53 @@ const knight_2 = new Character({
   need: {
     canJump: true,
     twoAttack: true,
+    faceR: false,
   },
   offset: {
-    x: 250,
+    x: 215,
     y: 160,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p16/Idle.png",
+      imgSrc: "../../img/img/p16/Idle.png",
       framemax: 10,
     },
     run: {
-      imgSrc: "./img/p16/Run.png",
+      imgSrc: "../../img/img/p16/Run.png",
       framemax: 6,
     },
     jump: {
-      imgSrc: "./img/p16/Jump.png",
+      imgSrc: "../../img/img/p16/Jump.png",
       framemax: 2,
     },
     fall: {
-      imgSrc: "./img/p16/Fall.png",
+      imgSrc: "../../img/img/p16/Fall.png",
       framemax: 2,
     },
     death: {
-      imgSrc: "./img/p16/Death.png",
+      imgSrc: "../../img/img/p16/Death.png",
       framemax: 9,
     },
     hit: {
-      imgSrc: "./img/p16/Get hit.png",
+      imgSrc: "../../img/img/p16/Get hit.png",
       framemax: 3,
     },
     attack1: {
-      imgSrc: "./img/p16/Attack1.png",
+      imgSrc: "../../img/img/p16/Attack1.png",
       framemax: 4,
     },
     attack2: {
-      imgSrc: "./img/p16/Attack2.png",
+      imgSrc: "../../img/img/p16/Attack2.png",
       framemax: 4,
     },
+  },
+  attackbox: {
+    offset: {
+      x: -150,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 
@@ -608,18 +719,19 @@ const fire_wizard_2 = new Character({
   need: {
     canJump: false,
     twoAttack: false,
+    faceR: false,
   },
   offset: {
-    x: 250,
+    x: 200,
     y: 160,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p10/Idle.png",
+      imgSrc: "../../img/img/p10/Idle.png",
       framemax: 8,
     },
     run: {
-      imgSrc: "./img/p10/Move.png",
+      imgSrc: "../../img/img/p10/Move.png",
       framemax: 8,
     },
     jump: {
@@ -631,21 +743,29 @@ const fire_wizard_2 = new Character({
       framemax: null,
     },
     death: {
-      imgSrc: "./img/p10/Death.png",
+      imgSrc: "../../img/img/p10/Death.png",
       framemax: 5,
     },
     hit: {
-      imgSrc: "./img/p10/Take Hit.png",
+      imgSrc: "../../img/img/p10/Take Hit.png",
       framemax: 4,
     },
     attack1: {
-      imgSrc: "./img/p10/Attack.png",
+      imgSrc: "../../img/img/p10/Attack.png",
       framemax: 8,
     },
     attack2: {
       imgSrc: null,
       framemax: null,
     },
+  },
+  attackbox: {
+    offset: {
+      x: -150,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 const fire_wizard_1 = new Character({
@@ -654,18 +774,19 @@ const fire_wizard_1 = new Character({
   need: {
     canJump: false,
     twoAttack: false,
+    faceR: true,
   },
   offset: {
-    x: 250,
+    x: 200,
     y: 160,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p9/Idle.png",
+      imgSrc: "../../img/img/p9/Idle.png",
       framemax: 8,
     },
     run: {
-      imgSrc: "./img/p9/Move.png",
+      imgSrc: "../../img/img/p9/Move.png",
       framemax: 8,
     },
     jump: {
@@ -677,21 +798,29 @@ const fire_wizard_1 = new Character({
       framemax: null,
     },
     death: {
-      imgSrc: "./img/p9/Death.png",
+      imgSrc: "../../img/img/p9/Death.png",
       framemax: 5,
     },
     hit: {
-      imgSrc: "./img/p9/Take Hit.png",
+      imgSrc: "../../img/img/p9/Take Hit.png",
       framemax: 4,
     },
     attack1: {
-      imgSrc: "./img/p9/Attack.png",
+      imgSrc: "../../img/img/p9/Attack.png",
       framemax: 8,
     },
     attack2: {
       imgSrc: null,
       framemax: null,
     },
+  },
+  attackbox: {
+    offset: {
+      x: 50,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 const goblin_1 = new Character({
@@ -700,18 +829,19 @@ const goblin_1 = new Character({
   need: {
     canJump: false,
     twoAttack: true,
+    faceR: true,
   },
   offset: {
-    x: 250,
+    x: 200,
     y: 150,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p17/Idle.png",
+      imgSrc: "../../img/img/p17/Idle.png",
       framemax: 4,
     },
     run: {
-      imgSrc: "./img/p17/Run.png",
+      imgSrc: "../../img/img/p17/Run.png",
       framemax: 8,
     },
     jump: {
@@ -723,21 +853,29 @@ const goblin_1 = new Character({
       framemax: null,
     },
     death: {
-      imgSrc: "./img/p17/Death.png",
+      imgSrc: "../../img/img/p17/Death.png",
       framemax: 4,
     },
     hit: {
-      imgSrc: "./img/p17/Take Hit.png",
+      imgSrc: "../../img/img/p17/Take Hit.png",
       framemax: 4,
     },
     attack1: {
-      imgSrc: "./img/p17/Attack.png",
+      imgSrc: "../../img/img/p17/Attack.png",
       framemax: 8,
     },
     attack2: {
-      imgSrc: "./img/p17/Attack2.png",
+      imgSrc: "../../img/img/p17/Attack2.png",
       framemax: 8,
     },
+  },
+  attackbox: {
+    offset: {
+      x: 50,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 const goblin_2 = new Character({
@@ -746,18 +884,19 @@ const goblin_2 = new Character({
   need: {
     canJump: false,
     twoAttack: true,
+    faceR: false,
   },
   offset: {
-    x: 250,
+    x: 195,
     y: 150,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p18/Idle.png",
+      imgSrc: "../../img/img/p18/Idle.png",
       framemax: 4,
     },
     run: {
-      imgSrc: "./img/p18/Run.png",
+      imgSrc: "../../img/img/p18/Run.png",
       framemax: 8,
     },
     jump: {
@@ -769,21 +908,29 @@ const goblin_2 = new Character({
       framemax: null,
     },
     death: {
-      imgSrc: "./img/p18/Death.png",
+      imgSrc: "../../img/img/p18/Death.png",
       framemax: 4,
     },
     hit: {
-      imgSrc: "./img/p18/Take Hit.png",
+      imgSrc: "../../img/img/p18/Take Hit.png",
       framemax: 4,
     },
     attack1: {
-      imgSrc: "./img/p18/Attack.png",
+      imgSrc: "../../img/img/p18/Attack.png",
       framemax: 8,
     },
     attack2: {
-      imgSrc: "./img/p18/Attack2.png",
+      imgSrc: "../../img/img/p18/Attack2.png",
       framemax: 8,
     },
+  },
+  attackbox: {
+    offset: {
+      x: -150,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 const skeleton_1 = new Character({
@@ -792,18 +939,19 @@ const skeleton_1 = new Character({
   need: {
     canJump: false,
     twoAttack: true,
+    faceR: true,
   },
   offset: {
-    x: 250,
+    x: 220,
     y: 150,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p19/Idle.png",
+      imgSrc: "../../img/img/p19/Idle.png",
       framemax: 4,
     },
     run: {
-      imgSrc: "./img/p19/Walk.png",
+      imgSrc: "../../img/img/p19/Walk.png",
       framemax: 4,
     },
     jump: {
@@ -815,21 +963,29 @@ const skeleton_1 = new Character({
       framemax: null,
     },
     death: {
-      imgSrc: "./img/p19/Death.png",
+      imgSrc: "../../img/img/p19/Death.png",
       framemax: 4,
     },
     hit: {
-      imgSrc: "./img/p19/Take Hit.png",
+      imgSrc: "../../img/img/p19/Take Hit.png",
       framemax: 4,
     },
     attack1: {
-      imgSrc: "./img/p19/Attack.png",
+      imgSrc: "../../img/img/p19/Attack.png",
       framemax: 8,
     },
     attack2: {
-      imgSrc: "./img/p19/Attack2.png",
+      imgSrc: "../../img/img/p19/Attack2.png",
       framemax: 8,
     },
+  },
+  attackbox: {
+    offset: {
+      x: 50,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 const skeleton_2 = new Character({
@@ -838,18 +994,19 @@ const skeleton_2 = new Character({
   need: {
     canJump: false,
     twoAttack: true,
+    faceR: false,
   },
   offset: {
-    x: 250,
+    x: 180,
     y: 150,
   },
   sprites: {
     idle: {
-      imgSrc: "./img/p20/Idle.png",
+      imgSrc: "../../img/img/p20/Idle.png",
       framemax: 4,
     },
     run: {
-      imgSrc: "./img/p20/Walk.png",
+      imgSrc: "../../img/img/p20/Walk.png",
       framemax: 4,
     },
     jump: {
@@ -861,21 +1018,29 @@ const skeleton_2 = new Character({
       framemax: null,
     },
     death: {
-      imgSrc: "./img/p20/Death.png",
+      imgSrc: "../../img/img/p20/Death.png",
       framemax: 4,
     },
     hit: {
-      imgSrc: "./img/p20/Take Hit.png",
+      imgSrc: "../../img/img/p20/Take Hit.png",
       framemax: 4,
     },
     attack1: {
-      imgSrc: "./img/p20/Attack.png",
+      imgSrc: "../../img/img/p20/Attack.png",
       framemax: 8,
     },
     attack2: {
-      imgSrc: "./img/p20/Attack2.png",
+      imgSrc: "../../img/img/p20/Attack2.png",
       framemax: 8,
     },
+  },
+  attackbox: {
+    offset: {
+      x: -150,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
   },
 });
 
@@ -886,7 +1051,7 @@ const background_3 = new Background({
     y: 0,
   },
   need: {
-    imgSrc: "./img/Backgroundf.jpeg",
+    imgSrc: "../../img/img/Backgroundf.jpeg",
     Shop: false,
     width: 1024,
     height: 576,
@@ -900,13 +1065,12 @@ const background_2 = new Background({
     y: 0,
   },
   need: {
-    imgSrc: "./img/background.png",
+    imgSrc: "../../img/img/background.png",
     Shop: true,
     width: 1024,
     height: 576,
   },
   scale: 1.2,
-
 });
 const background_1 = new Background({
   name: "roof",
@@ -915,11 +1079,10 @@ const background_1 = new Background({
     y: 0,
   },
   need: {
-    imgSrc: "./img/background.jpg",
+    imgSrc: "../../img/img/background.jpg",
     Shop: false,
     width: 1024,
-    height: 576,    
+    height: 576,
   },
   scale: 1.2,
-
 });

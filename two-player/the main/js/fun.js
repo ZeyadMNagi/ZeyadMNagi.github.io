@@ -30,6 +30,8 @@ function retangularcollision({rectangle1, rectangle2}) {
     rectangle1.attackbox.position.y <= rectangle2.position.y + rectangle2.height
   );
 }
+
+
 function determineWinner({player, enemy, timeid}) {
   clearTimeout(timeid);
   setTimeout(() => {

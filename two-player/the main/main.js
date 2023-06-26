@@ -19,119 +19,7 @@ var enemyJump = true;
 var player_onGround = true;
 var enemy_onGround = true;
 
-//offset for the roof background
 
-if (opp_1.name === "Evil wizard" && background_use.name === "roof") {
-  opp_1.offset.y = 270;
-}
-if (opp_2.name === "Evil wizard" && background_use.name === "roof") {
-  opp_2.offset.y = 270;
-}
-if (opp_1.name === "Knight" && background_use.name === "roof") {
-  opp_1.offset.y = 100;
-}
-if (opp_2.name === "Knight" && background_use.name === "roof") {
-  opp_2.offset.y = 100;
-}
-if (opp_1.name === "king" && background_use.name === "roof") {
-  opp_1.offset.y = 90;
-}
-if (opp_2.name === "king" && background_use.name === "roof") {
-  opp_2.offset.y = 90;
-}
-if (opp_1.name === "samurai" && background_use.name === "roof") {
-  opp_1.offset.y = 150;
-}
-if (opp_2.name === "samurai" && background_use.name === "roof") {
-  opp_2.offset.y = 150;
-}
-if (opp_1.name === "warrior" && background_use.name === "roof") {
-  opp_1.offset.y = 130;
-}
-if (opp_2.name === "warrior" && background_use.name === "roof") {
-  opp_2.offset.y = 130;
-}
-if (opp_1.name === "wizard" && background_use.name === "roof") {
-  opp_1.offset.y = 90;
-}
-if (opp_2.name === "wizard" && background_use.name === "roof") {
-  opp_2.offset.y = 90;
-}
-if (opp_1.name === "goblin" && background_use.name === "roof") {
-  opp_1.offset.y = 90;
-}
-if (opp_2.name === "goblin" && background_use.name === "roof") {
-  opp_2.offset.y = 90;
-}
-if (opp_1.name === "skeleton" && background_use.name === "roof") {
-  opp_1.offset.y = 90;
-}
-if (opp_2.name === "skeleton" && background_use.name === "roof") {
-  opp_2.offset.y = 90;
-}
-if (opp_1.name === "fire wizard" && background_use.name === "roof") {
-  opp_1.offset.y = 90;
-}
-if (opp_2.name === "fire wizard" && background_use.name === "roof") {
-  opp_2.offset.y = 90;
-}
-
-//the offset for the forest background
-
-if (opp_1.name === "Evil wizard" && background_use.name === "forest") {
-  opp_1.offset.y = 310;
-}
-if (opp_2.name === "Evil wizard" && background_use.name === "forest") {
-  opp_2.offset.y = 310;
-}
-if (opp_1.name === "Knight" && background_use.name === "forest") {
-  opp_1.offset.y = 110;
-}
-if (opp_2.name === "Knight" && background_use.name === "forest") {
-  opp_2.offset.y = 110;
-}
-if (opp_1.name === "king" && background_use.name === "forest") {
-  opp_1.offset.y = 110;
-}
-if (opp_2.name === "king" && background_use.name === "forest") {
-  opp_2.offset.y = 110;
-}
-if (opp_1.name === "samurai" && background_use.name === "forest") {
-  opp_1.offset.y = 170;
-}
-if (opp_2.name === "samurai" && background_use.name === "forest") {
-  opp_2.offset.y = 170;
-}
-if (opp_1.name === "warrior" && background_use.name === "forest") {
-  opp_1.offset.y = 150;
-}
-if (opp_2.name === "warrior" && background_use.name === "forest") {
-  opp_2.offset.y = 150;
-}
-if (opp_1.name === "wizard" && background_use.name === "forest") {
-  opp_1.offset.y = 110;
-}
-if (opp_2.name === "wizard" && background_use.name === "forest") {
-  opp_2.offset.y = 110;
-}
-if (opp_1.name === "goblin" && background_use.name === "forest") {
-  opp_1.offset.y = 110;
-}
-if (opp_2.name === "goblin" && background_use.name === "forest") {
-  opp_2.offset.y = 110;
-}
-if (opp_1.name === "skeleton" && background_use.name === "forest") {
-  opp_1.offset.y = 110;
-}
-if (opp_2.name === "skeleton" && background_use.name === "forest") {
-  opp_2.offset.y = 110;
-}
-if (opp_1.name === "fire wizard" && background_use.name === "forest") {
-  opp_1.offset.y = 110;
-}
-if (opp_2.name === "fire wizard" && background_use.name === "forest") {
-  opp_2.offset.y = 110;
-}
 
 canvas.width = 1024;
 canvas.height = 576;
@@ -174,7 +62,7 @@ if (background_use.need.Shop) {
       x: 600,
       y: 129,
     },
-    imageSrc: "./img/shop.png",
+    imageSrc: "../../img/img/shop.png",
     scale: 2.75,
     framemax: 6,
   });
@@ -189,10 +77,6 @@ const player = new Fighter({
     x: 0,
     y: 0,
   },
-  offset: {
-    x: 0,
-    y: 0,
-  },
   imageSrc: opp_1.sprites.idle.imgSrc,
   framemax: opp_1.sprites.idle.framemax,
   scale: opp_1.scale,
@@ -200,7 +84,9 @@ const player = new Fighter({
     x: opp_1.offset.x,
     y: opp_1.offset.y,
   },
-
+  health:300,
+  no:300,
+  damage:4,
   sprites: {
     idle: {
       imageSrc: opp_1.sprites.idle.imgSrc,
@@ -237,10 +123,10 @@ const player = new Fighter({
   },
   attackbox: {
     offset: {
-      x: 130,
+      x: opp_1.attackbox.offset.x,
       y: 50,
     },
-    width: 170,
+    width: opp_1.attackbox.width,
     height: 50,
   },
 });
@@ -267,7 +153,9 @@ const enemy = new Fighter({
     x: opp_2.offset.x,
     y: opp_2.offset.y,
   },
-
+  health:300,
+  no:300,
+  damage:4,
   sprites: {
     idle: {
       imageSrc: opp_2.sprites.idle.imgSrc,
@@ -305,10 +193,10 @@ const enemy = new Fighter({
   },
   attackbox: {
     offset: {
-      x: -230,
+      x: opp_2.attackbox.offset.x,
       y: 50,
     },
-    width: 150,
+    width: opp_2.attackbox.width,
     height: 50,
   },
 });
@@ -339,12 +227,14 @@ const keys = {
 
 let lastkey;
 
+
 decrease();
 
 function animate() {
   window.requestAnimationFrame(animate);
   C.fillStyle = "black";
   C.fillRect(0, 0, canvas.width, canvas.height);
+
   background0.update();
   background.update();
   background1.update();
@@ -377,9 +267,11 @@ function animate() {
   ) {
     player.switchsprite("run");
     if (
-      (keys.d.pressed && background1.position.x >= 0 && enemy.position.x >= 50)
+      keys.d.pressed &&
+      background1.position.x >= 0 &&
+      enemy.position.x >= 50
     ) {
-      if(shop_put){
+      if (shop_put) {
         shop_put.position.x -= 5;
       }
       background.position.x -= 5;
@@ -390,9 +282,11 @@ function animate() {
       // enemy.scale -= 0.002;
     }
     if (
-      (keys.a.pressed && background0.position.x <= 0 && enemy.position.x <= 900)
+      keys.a.pressed &&
+      background0.position.x <= 0 &&
+      enemy.position.x <= 900
     ) {
-      if(shop_put){
+      if (shop_put) {
         shop_put.position.x += 5;
       }
       background.position.x += 5;
@@ -445,29 +339,31 @@ function animate() {
   ) {
     enemy.switchsprite("run");
     if (
-      (keys.ArrowRight.pressed && background1.position.x >= 0  && player.position.x <= 900) 
-      
+      keys.ArrowRight.pressed &&
+      background1.position.x >= 0 &&
+      player.position.x >= 50
     ) {
-      if(shop_put){
+      if (shop_put) {
         shop_put.position.x -= 5;
       }
-      
+
       background.position.x -= 5;
       background1.position.x -= 5;
       background0.position.x -= 5;
       player.position.x -= 5;
     }
     if (
-      (keys.ArrowLeft.pressed && background0.position.x <= 0  && player.position.x >= 50)
+      keys.ArrowLeft.pressed &&
+      background0.position.x <= 0 &&
+      player.position.x <= 900
     ) {
-      if(shop_put){
+      if (shop_put) {
         shop_put.position.x += 5;
       }
       background.position.x += 5;
       background1.position.x += 5;
       background0.position.x += 5;
       player.position.x += 5;
-      
     }
   } else {
     enemy.switchsprite("idle");
@@ -493,7 +389,7 @@ function animate() {
     player.isattacking = false;
 
     gsap.to("#en-heal", {
-      width: enemy.health + "%",
+      width: ( 100 * enemy.health) / enemy.no  + "%",
     });
   }
 
@@ -515,7 +411,7 @@ function animate() {
     enemy.isattacking = false;
 
     gsap.to("#ol-heal", {
-      width: player.health + "%",
+      width: ( 100 * player.health) / player.no  + "%",
     });
   }
 
@@ -640,7 +536,6 @@ window.addEventListener("keydown", (event) => {
               enemyJump = false;
             }
           }
-
           break;
         case "ArrowDown":
           if (canAttack_E) enemy.attack1();
@@ -700,3 +595,117 @@ window.addEventListener("keyup", (event) => {
       break;
   }
 });
+
+//offset for the roof background
+
+if (opp_1.name === "Evil wizard" && background_use.name === "roof") {
+  opp_1.offset.y = 270;
+}
+if (opp_2.name === "Evil wizard" && background_use.name === "roof") {
+  opp_2.offset.y = 270;
+}
+if (opp_1.name === "Knight" && background_use.name === "roof") {
+  opp_1.offset.y = 100;
+}
+if (opp_2.name === "Knight" && background_use.name === "roof") {
+  opp_2.offset.y = 100;
+}
+if (opp_1.name === "king" && background_use.name === "roof") {
+  opp_1.offset.y = 90;
+}
+if (opp_2.name === "king" && background_use.name === "roof") {
+  opp_2.offset.y = 90;
+}
+if (opp_1.name === "samurai" && background_use.name === "roof") {
+  opp_1.offset.y = 150;
+}
+if (opp_2.name === "samurai" && background_use.name === "roof") {
+  opp_2.offset.y = 150;
+}
+if (opp_1.name === "warrior" && background_use.name === "roof") {
+  opp_1.offset.y = 130;
+}
+if (opp_2.name === "warrior" && background_use.name === "roof") {
+  opp_2.offset.y = 130;
+}
+if (opp_1.name === "wizard" && background_use.name === "roof") {
+  opp_1.offset.y = 90;
+}
+if (opp_2.name === "wizard" && background_use.name === "roof") {
+  opp_2.offset.y = 90;
+}
+if (opp_1.name === "goblin" && background_use.name === "roof") {
+  opp_1.offset.y = 90;
+}
+if (opp_2.name === "goblin" && background_use.name === "roof") {
+  opp_2.offset.y = 90;
+}
+if (opp_1.name === "skeleton" && background_use.name === "roof") {
+  opp_1.offset.y = 90;
+}
+if (opp_2.name === "skeleton" && background_use.name === "roof") {
+  opp_2.offset.y = 90;
+}
+if (opp_1.name === "fire wizard" && background_use.name === "roof") {
+  opp_1.offset.y = 90;
+}
+if (opp_2.name === "fire wizard" && background_use.name === "roof") {
+  opp_2.offset.y = 90;
+}
+
+//the offset for the forest background
+
+if (opp_1.name === "Evil wizard" && background_use.name === "forest") {
+  opp_1.offset.y = 310;
+}
+if (opp_2.name === "Evil wizard" && background_use.name === "forest") {
+  opp_2.offset.y = 310;
+}
+if (opp_1.name === "Knight" && background_use.name === "forest") {
+  opp_1.offset.y = 110;
+}
+if (opp_2.name === "Knight" && background_use.name === "forest") {
+  opp_2.offset.y = 110;
+}
+if (opp_1.name === "king" && background_use.name === "forest") {
+  opp_1.offset.y = 110;
+}
+if (opp_2.name === "king" && background_use.name === "forest") {
+  opp_2.offset.y = 110;
+}
+if (opp_1.name === "samurai" && background_use.name === "forest") {
+  opp_1.offset.y = 170;
+}
+if (opp_2.name === "samurai" && background_use.name === "forest") {
+  opp_2.offset.y = 170;
+}
+if (opp_1.name === "warrior" && background_use.name === "forest") {
+  opp_1.offset.y = 150;
+}
+if (opp_2.name === "warrior" && background_use.name === "forest") {
+  opp_2.offset.y = 150;
+}
+if (opp_1.name === "wizard" && background_use.name === "forest") {
+  opp_1.offset.y = 110;
+}
+if (opp_2.name === "wizard" && background_use.name === "forest") {
+  opp_2.offset.y = 110;
+}
+if (opp_1.name === "goblin" && background_use.name === "forest") {
+  opp_1.offset.y = 110;
+}
+if (opp_2.name === "goblin" && background_use.name === "forest") {
+  opp_2.offset.y = 110;
+}
+if (opp_1.name === "skeleton" && background_use.name === "forest") {
+  opp_1.offset.y = 110;
+}
+if (opp_2.name === "skeleton" && background_use.name === "forest") {
+  opp_2.offset.y = 110;
+}
+if (opp_1.name === "fire wizard" && background_use.name === "forest") {
+  opp_1.offset.y = 110;
+}
+if (opp_2.name === "fire wizard" && background_use.name === "forest") {
+  opp_2.offset.y = 110;
+}
