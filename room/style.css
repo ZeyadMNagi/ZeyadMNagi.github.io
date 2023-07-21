@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', Arial;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+body {
+    background: #233;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.pop-up {
+    display: flex;
+    flex-direction: column;
+    background: rgba(184, 136, 4, 0.808);
+    width: 80%;
+    height: 100%;
+    border: 5px solid wheat;
+    border-radius: 9px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    color: #fefefe;
+    font-size: 22px;
+    padding: 15px;
+
+}
+
