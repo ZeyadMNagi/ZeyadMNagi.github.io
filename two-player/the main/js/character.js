@@ -8,7 +8,7 @@ class Character {
     offset = {x: 0, y: 0},
     Shop,
     need,
-    attackbox
+    attackbox,
   }) {
     this.name = name;
     this.image = new Image();
@@ -431,7 +431,6 @@ const king_1 = new Character({
     width: 170,
     height: 50,
   },
-
 });
 const king_2 = new Character({
   name: "king",
@@ -1044,6 +1043,233 @@ const skeleton_2 = new Character({
   },
 });
 
+const hunter_1 = new Character({
+  name: "idk",
+  scale: 3,
+  need: {
+    canJump: false,
+    twoAttack: false,
+    faceR: false,
+  },
+  offset: {
+    x: 200,
+    y: 150,
+  },
+  sprites: {
+    idle: {
+      imgSrc: "../../img/img/p21/idle.png",
+      framemax: 8,
+    },
+    run: {
+      imgSrc: "../../img/img/p21/Run.png",
+      framemax: 8,
+    },
+    jump: {
+      imgSrc: "../../img/img/p21/Jump.png",
+      framemax: 2,
+    },
+    fall: {
+      imgSrc: "../../img/img/p21/Fall.png",
+      framemax: 2,
+    },
+    death: {
+      imgSrc: "../../img/img/p21/Death.png",
+      framemax: 8,
+    },
+    hit: {
+      imgSrc: "../../img/img/p21/Take hit.png",
+      framemax: 3,
+    },
+    attack1: {
+      imgSrc: "../../img/img/p21/Attack1.png",
+      framemax: 5,
+    },
+    attack2: {
+      imgSrc: "../../img/img/p21/Attack2.png",
+      framemax: 5,
+    },
+  },
+  attackbox: {
+    offset: {
+      x: 50,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
+  },
+});
+const hunter_2 = new Character({
+  name: "idk",
+  scale: 3,
+  need: {
+    canJump: false,
+    twoAttack: false,
+    faceR: false,
+  },
+  offset: {
+    x: 200,
+    y: 140,
+  },
+  sprites: {
+    idle: {
+      imgSrc: "../../img/img/p22/idle.png",
+      framemax: 8,
+    },
+    run: {
+      imgSrc: "../../img/img/p22/Run.png",
+      framemax: 8,
+    },
+    jump: {
+      imgSrc: "../../img/img/p22/Jump.png",
+      framemax: 2,
+    },
+    fall: {
+      imgSrc: "../../img/img/p22/Fall.png",
+      framemax: 2,
+    },
+    death: {
+      imgSrc: "../../img/img/p22/Death.png",
+      framemax: 8,
+    },
+    hit: {
+      imgSrc: "../../img/img/p22/Take hit.png",
+      framemax: 3,
+    },
+    attack1: {
+      imgSrc: "../../img/img/p22/Attack1.png",
+      framemax: 5,
+    },
+    attack2: {
+      imgSrc: "../../img/img/p22/Attack2.png",
+      framemax: 5,
+    },
+  },
+  attackbox: {
+    offset: {
+      x: -150,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
+  },
+});
+
+
+const purple_1 = new Character({
+  name: "night",
+  scale: 3,
+  need: {
+    canJump: false,
+    twoAttack: false,
+    faceR: true,
+  },
+  offset: {
+    x: 100,
+    y: 35,
+  },
+  sprites: {
+    idle: {
+      imgSrc: "../../img/img/p23/idle.png",
+      framemax: 9,
+    },
+    run: {
+      imgSrc: "../../img/img/p23/Run.png",
+      framemax: 6,
+    },
+    jump: {
+      imgSrc: null,
+      framemax: null,
+    },
+    fall: {
+      imgSrc: null,
+      framemax: null,
+    },
+    death: {
+      imgSrc: "../../img/img/p23/Death.png",
+      framemax: 23,
+    },
+    hit: {
+      imgSrc: "../../img/img/p23/hit.png",
+      framemax: 5,
+    },
+    attack1: {
+      imgSrc: "../../img/img/p23/Attack.png",
+      framemax: 12,
+    },
+    attack2: {
+      imgSrc: null,
+      framemax: null,
+    },
+  },
+  attackbox: {
+    offset: {
+      x: 50,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
+  },
+});
+
+
+
+const purple_2 = new Character({
+  name: "night",
+  scale: 3,
+  need: {
+    canJump: false,
+    twoAttack: false,
+    faceR: false,
+  },
+  offset: {
+    x: 100,
+    y: 35,
+  },
+  sprites: {
+    idle: {
+      imgSrc: "../../img/img/p24/idle.png",
+      framemax: 9,
+    },
+    run: {
+      imgSrc: "../../img/img/p24/Run.png",
+      framemax: 6,
+    },
+    jump: {
+      imgSrc: null,
+      framemax: null,
+    },
+    fall: {
+      imgSrc: null,
+      framemax: null,
+    },
+    death: {
+      imgSrc: "../../img/img/p24/Death.png",
+      framemax: 23,
+    },
+    hit: {
+      imgSrc: "../../img/img/p24/hit.png",
+      framemax: 5,
+    },
+    attack1: {
+      imgSrc: "../../img/img/p24/Attack.png",
+      framemax: 12,
+    },
+    attack2: {
+      imgSrc: null,
+      framemax: null,
+    },
+  },
+  attackbox: {
+    offset: {
+      x: -150,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
+  },
+});
+
+
 const background_3 = new Background({
   name: "forest",
   position: {
@@ -1058,6 +1284,8 @@ const background_3 = new Background({
   },
   scale: 1.2,
 });
+
+
 const background_2 = new Background({
   name: "main",
   position: {

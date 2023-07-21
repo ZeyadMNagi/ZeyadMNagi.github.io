@@ -28,6 +28,10 @@ var choose = (element) => {
     localStorage.setItem("player", JSON.stringify(goblin_1));
   } else if (playerid === "p19") {
     localStorage.setItem("player", JSON.stringify(skeleton_1));
+  } else if (playerid === "p21") {
+    localStorage.setItem("player", JSON.stringify(hunter_1));
+  } else if (playerid === "p23") {
+    localStorage.setItem("player", JSON.stringify(purple_1));
   }
 
   choose = 0;

@@ -7,4 +7,5 @@ const evil = [evil_1, evil_2];
 const knight = [knight_1, knight_2];
 const goblin = [goblin_1, goblin_2];
 const skeleton = [skeleton_1, skeleton_2];
-
+const hunter = [hunter_1, hunter_2 ];
+const purple = [purple_1, purple_2]

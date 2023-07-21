@@ -1,17 +1,44 @@
 const enemies = [];
 const Characters = [
-  wizard_1, wizard_2,  warrior_1,  warrior_2, samurai_1,  samurai_2,
-  king_1, king_2, fire_wizard_1, fire_wizard_2, evil_1,  evil_2,
-  knight_1 , knight_2, goblin_1, goblin_2, skeleton_1, skeleton_2
+  wizard_1,
+  wizard_2,
+  warrior_1,
+  warrior_2,
+  samurai_1,
+  samurai_2,
+  king_1,
+  king_2,
+  fire_wizard_1,
+  fire_wizard_2,
+  evil_1,
+  evil_2,
+  knight_1,
+  knight_2,
+  goblin_1,
+  goblin_2,
+  skeleton_1,
+  skeleton_2,
 ];
+var t;
+var difficulty = localStorage.getItem("difficulty");
 
-function spawnEnemies(){
-    // setInterval(() => {
+if (difficulty === "dN") {
+  t = 7000;
+} else if (difficulty === "dH") {
+  t = 5000;
+} else {
+  t = 10000;
+}
+
+function spawnEnemies() {
+  setInterval(() => {
+    if(!player.dead ) {    
+      if (time >0) {
         let i = Math.floor(Math.random() * 8);
         let x = Math.random() * (1000 - -800) + -800;
-        
-        
-        enemies.push(new Fighter({
+    
+        enemies.push(
+          new Fighter({
             position: {
               x: x,
               y: 0,
@@ -27,9 +54,9 @@ function spawnEnemies(){
               x: Characters[i].offset.x,
               y: Characters[i].offset.y,
             },
-            enemy:true,
-            health:80,
-            no:80,
+            enemy: true,
+            health: 80,
+            no: 80,
             damage: 5,
             sprites: {
               idle: {
@@ -74,8 +101,9 @@ function spawnEnemies(){
               height: 50,
             },
           })
-          )
-          
-          console.log(enemies)
-    // }, 10000);
+        );
+        console.log(enemies);
+      }
+    }
+  }, t);
 }

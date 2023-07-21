@@ -12,21 +12,52 @@ const player_used = JSON.parse(object);
 const background_get = localStorage.getItem("background");
 const background_use = JSON.parse(background_get);
 
-var player_use = wizard_1;
+var player_use = player_used;
 
 var scoreEl = document.getElementById("sc");
 
-function face(i){
-  player_use = wizard[i];
-  player.sprites.idle.image.src = player_use.sprites.idle.imgSrc;
-  player.sprites.run.image.src = player_use.sprites.run.imgSrc;
-  player.sprites.jump.image.src = player_use.sprites.jump.imgSrc;
-  player.sprites.fall.image.src = player_use.sprites.fall.imgSrc;
-  player.sprites.attack2.image.src = player_use.sprites.attack2.imgSrc;
+function face(i) {
+  if (player_used.name === "wizard") {
+    player_use = wizard[i];
+  } else if (player_used.name === "warrior") {
+    player_use = warrior[i];
+  } else if (player_used.name === "samurai") {
+    player_use = samurai[i];
+  } else if (player_used.name === "king") {
+    player_use = king[i];
+  } else if (player_used.name === "Evil wizard") {
+    player_use = evil[i];
+  } else if (player_used.name === "Knight") {
+    player_use = knight[i];
+  } else if (player_used.name === "fire wizard") {
+    player_use = fire[i];
+  } else if (player_used.name === "goblin") {
+    player_use = goblin[i];
+  } else if (player_used.name === "skeleton") {
+    player_use = skeleton[i];
+  } else if (player_used.name === "idk") {
+    player_use = hunter[i];
+  } else if (player_used.name === "night") {
+    player_use = purple[i];
+  }
+
   player.sprites.attack1.image.src = player_use.sprites.attack1.imgSrc;
-  player.sprites.death.image.src = player_use.sprites.death.imgSrc;
-  player.sprites.takehit.image.src = player_use.sprites.hit.imgSrc;
+
   player.attackbox.offset.x = player_use.attackbox.offset.x;
+
+  player.sprites.attack2.image.src = player_use.sprites.attack2.imgSrc;
+
+  player.sprites.death.image.src = player_use.sprites.death.imgSrc;
+
+  player.sprites.fall.image.src = player_use.sprites.fall.imgSrc;
+
+  player.sprites.takehit.image.src = player_use.sprites.hit.imgSrc;
+
+  player.sprites.jump.image.src = player_use.sprites.jump.imgSrc;
+
+  player.sprites.run.image.src = player_use.sprites.run.imgSrc;
+
+  player.sprites.idle.image.src = player_use.sprites.idle.imgSrc;
 }
 
 const gravity = 0.5;
@@ -35,7 +66,6 @@ var canPress = true;
 var playerJump = true;
 var canAttack_P = true;
 var player_onGround = true;
-
 
 //sprites
 
@@ -77,7 +107,6 @@ if (background_use.need.Shop) {
     framemax: 6,
   });
 }
-
 const player = new Fighter({
   position: {
     x: 20,
@@ -99,8 +128,8 @@ const player = new Fighter({
     y: player_use.offset.y,
   },
   health: 300,
-  no :300,
-  damage:4,
+  no: 300,
+  damage: 4,
   sprites: {
     idle: {
       imageSrc: player_use.sprites.idle.imgSrc,
@@ -138,7 +167,7 @@ const player = new Fighter({
   attackbox: {
     offset: {
       x: player_use.attackbox.offset.x,
-      y: 50,
+      y: player_use.attackbox.offset.y,
     },
     width: player_use.attackbox.width,
     height: 50,
@@ -182,8 +211,11 @@ const keys = {
 decrease();
 spawnEnemies();
 
-
 let score = 0;
+
+let lastAttackTime = 0;
+const attackDelay = 1000; // 1 second
+
 
 function animate() {
   window.requestAnimationFrame(animate);
@@ -210,9 +242,8 @@ function animate() {
       enemy.switchsprite("run");
     } else if (enemy.position.x < player.position.x && !player.dead) {
       enemy.position.x += 2.5;
-      enemy.switchsprite("run");    
-    }
-    else if (
+      enemy.switchsprite("run");
+    } else if (
       enemy.position.x === player.position.x ||
       (enemy.position.x > 0 && enemy.position.x < player.position.x + 40) ||
       (enemy.position.x < 0 && enemy.position.x > player.position.x - 40)
@@ -228,7 +259,7 @@ function animate() {
     player.lastkey === "ArrowLeft" &&
     player.position.x > 40
   ) {
-    player.velocity.x = -5;  
+    player.velocity.x = -5;
     player.switchsprite("run");
   } else if (
     keys.ArrowRight.pressed &&
@@ -236,13 +267,13 @@ function animate() {
     player.position.x < 900
   ) {
     player.velocity.x = 5;
-    player.switchsprite("run");    
+    player.switchsprite("run");
   } else if (
     (keys.ArrowLeft.pressed && player.lastkey === "ArrowLeft") ||
     (keys.ArrowRight.pressed && player.lastkey === "ArrowRight")
   ) {
-      player.switchsprite("run");
-    
+    player.switchsprite("run");
+
     if (keys.ArrowRight.pressed && background1.position.x >= 0) {
       if (shop_put) {
         shop_put.position.x -= 5;
@@ -271,9 +302,9 @@ function animate() {
 
   //jump
   if (player_use.need.canJump) {
-    if (player.velocity.y < 0) {  
+    if (player.velocity.y < 0) {
       player.switchsprite("jump");
-    } else if (player.velocity.y > 0) {  
+    } else if (player.velocity.y > 0) {
       player.switchsprite("fall");
     }
   }
@@ -288,18 +319,6 @@ function animate() {
     player_onGround = false;
   }
 
-  if (!player.dead) {
-    enemies.forEach((enemy) => {
-      if (
-        retangularcollision({
-          rectangle1: enemy,
-          rectangle2: player,
-        })
-      ) {
-        enemy.attack1();
-      }
-    });
-  }
   //attack
   enemies.forEach((enemy) => {
     if (
@@ -313,29 +332,39 @@ function animate() {
       enemy.takehit();
       player.isattacking = false;
       score += 50;
-      scoreEl.innerHTML = score ;
-
+      scoreEl.innerHTML = score;
     }
   });
 
   enemies.forEach((enemy) => {
-    if (enemy.isattacking) {
+    if (
+      retangularcollision({
+        rectangle1: enemy,
+        rectangle2: player,
+      })
+    ) {
       enemy.isattacking = false;
-      player.takehit();
+      const currentTime = Date.now();
+      if (currentTime - lastAttackTime >= attackDelay) {
+        player.takehit();
 
-      gsap.to("#ol-heal", {
-        width: scoreEl.innerHTML = score 
-        ,
-      });
+        gsap.to("#ol-heal", {
+          width: (100 * player.health) / player.no + "%",
+        });
+
+        enemy.attack1();
+
+        lastAttackTime = currentTime;
+      }
     }
   });
-  enemies.forEach(enemy=>{
-    if (enemy.health <= 0 ){
-      const enemyIndex =  enemies.findIndex((enemyH)=>{
-        return enemy === enemyH
-      })
+  enemies.forEach((enemy) => {
+    if (enemy.health <= 0) {
+      const enemyIndex = enemies.findIndex((enemyH) => {
+        return enemy === enemyH;
+      });
       setTimeout(() => {
-        enemies.splice(enemyIndex,1);
+        enemies.splice(enemyIndex, 1);
       }, 500);
     }
   });
@@ -356,7 +385,7 @@ function animate() {
 animate();
 
 window.addEventListener("keydown", (event) => {
-  if (!player.dead ) {
+  if (!player.dead) {
     switch (event.key) {
       case "ArrowRight":
         keys.ArrowRight.pressed = true;
@@ -369,7 +398,7 @@ window.addEventListener("keydown", (event) => {
         player.lastkey = "ArrowLeft";
         canAttack_P = false;
         face(1);
-      break;
+        break;
       case "ArrowUp":
         if (player_use.need.canJump) {
           if (playerJump) {
@@ -445,14 +474,12 @@ if (player_use.name === "fire wizard" && background_use.name === "roof") {
 if (player_use.name === "Evil wizard" && background_use.name === "forest") {
   player.offset.y = 310;
 }
-
 if (player_use.name === "Knight" && background_use.name === "forest") {
   player.offset.y = 110;
 }
 if (player_use.name === "king" && background_use.name === "forest") {
   player.offset.y = 110;
 }
-
 if (player_use.name === "samurai" && background_use.name === "forest") {
   player.offset.y = 170;
 }
