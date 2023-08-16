@@ -186,28 +186,6 @@ const keys = {
   },
 };
 
-// function moveUp() {
-//   if (player_use.need.canJump) {
-//     if (playerJump) {
-//       keys.ArrowUp.pressed = true;
-//       player.velocity.y = -15;
-//       playerJump = false;
-//     }
-//   }
-// }
-
-// function moveLeft() {
-//   keys.ArrowLeft.pressed = true;
-//   player.lastkey = "ArrowLeft";
-//   canAttack_P = false;
-// }
-
-// function moveRight() {
-//   keys.ArrowRight.pressed = true;
-//   player.lastkey = "ArrowRight";
-//   canAttack_P = false;
-// }
-
 decrease();
 spawnEnemies();
 
@@ -334,9 +312,7 @@ function animate() {
       score += 50;
       scoreEl.innerHTML = score;
     }
-  });
-
-  enemies.forEach((enemy) => {
+  
     if (
       retangularcollision({
         rectangle1: enemy,
@@ -357,18 +333,15 @@ function animate() {
         lastAttackTime = currentTime;
       }
     }
-  });
-  enemies.forEach((enemy) => {
-    if (enemy.health <= 0) {
+     if (enemy.health <= 0) {
       const enemyIndex = enemies.findIndex((enemyH) => {
         return enemy === enemyH;
       });
       setTimeout(() => {
-        enemies.splice(enemyIndex, 1);
+        if (enemyIndex > -1) enemies.splice(enemyIndex, 1);
       }, 500);
     }
-  });
-  enemies.forEach((enemy) => {
+
     if (enemy.health <= 0 || player.health <= 0) {
       // determineWinner({player, enemy, timeid});
       canPress = false;

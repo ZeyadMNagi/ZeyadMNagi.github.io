@@ -2,40 +2,105 @@ var playerNamee = document.querySelector("#player1_name");
 var EnemyNamee = document.querySelector("#player2_name");
 var btn = document.querySelector("#start");
 var h = document.querySelector("h4");
-var btn_ar = document.querySelector("#btn-ar");
-var btn_en = document.querySelector("#btn-en");
-var layer = document.querySelector(".layer");
-var pop = document.querySelector(".lang");
+var P_pre = document.querySelector("#player1");
+var E_pre = document.querySelector("#player2");
+var player = document.querySelectorAll(".P");
+var enemy = document.querySelectorAll(".E");
+var playerid;
+var enemyid;
+var player_pre;
+var enemy_pre;
 
-btn_en.addEventListener("click", () => {
-  layer.style.display = "none";
-  pop.style.display = "none";
-  document.body.style.height = "unset";
-  document.body.style.overflow = "unset";
-  localStorage.setItem("arabic", false);
-  arabic = false;
+var object_1;
+var opp_1;
+var object_2;
+var opp_2;
+
+if (localStorage.getItem("player1") === null) {
+  opp_1 = wizard_1;
+} else {
+  object_1 = localStorage.getItem("player1");
+  opp_1 = JSON.parse(object_1);
+}
+if (localStorage.getItem("player2") === null) {
+  opp_2 = wizard_2;
+} else {
+  object_2 = localStorage.getItem("player2");
+  opp_2 = JSON.parse(object_2);
+}
+const canvas = document.getElementById("canvas");
+const C = canvas.getContext("2d");
+
+canvas.width = 1024;
+canvas.height = 572;
+C.fillRect(0, 0, canvas.width, canvas.height);
+
+var gravity = 0;
+player_pre = new Fighter({
+  position: {
+    x: 20,
+    y: 0,
+  },
+  imageSrc: opp_1.sprites.preview.imgSrc,
+  framemax: opp_1.sprites.idle.framemax,
+  scale: opp_1.scale,
+  offset: {
+    x: opp_1.offset.x,
+    y: opp_1.offset.y,
+  },
 });
-btn_ar.addEventListener("click", () => {
-  layer.style.display = "none";
-  pop.style.display = "none";
-  document.body.style.height = "unset";
-  document.body.style.overflow = "unset";
-
-  arabic = true;
-  localStorage.setItem("arabic", true);
-
-  document.querySelector(".head1").innerHTML = "اختر الاعب";
-  document.querySelector(".head2").innerHTML = "اختر الخلفيه";
-  document.querySelector(".head3").innerHTML = "ادخل اسماء الاعبين";
-  document.querySelector(".head5").innerHTML = "اسم الاعب الاول";
-  document.querySelector(".head4").innerHTML = "اسم الاعب الثاني";
-  document.querySelector(".th2").innerHTML = "الاعب الأول";
-  document.querySelector(".th1").innerHTML = "الاعب الثاني";
-  playerNamee.placeholder = "ادخل الاسماء";
-  EnemyNamee.placeholder = "ادخل الاسماء";
-  btn.innerHTML = "ابدأ القتال";
+enemy_pre = new Fighter({
+  position: {
+    x: 500,
+    y: 0,
+  },
+  imageSrc: opp_2.sprites.preview.imgSrc,
+  framemax: opp_2.sprites.idle.framemax,
+  scale: opp_2.scale,
+  offset: {
+    x: opp_2.offset.x,
+    y: opp_2.offset.y,
+  },
 });
-
+function refresh() {
+  player_pre = new Fighter({
+    position: {
+      x: 100,
+      y: 250,
+    },
+    imageSrc: opp_1.sprites.preview.imgSrc,
+    framemax: opp_1.sprites.idle.framemax,
+    scale: opp_1.scale,
+    offset: {
+      x: opp_1.offset.x,
+      y: opp_1.offset.y,
+    },
+  });
+  enemy_pre = new Fighter({
+    position: {
+      x: 800,
+      y: 250,
+    },
+    imageSrc: opp_2.sprites.preview.imgSrc,
+    framemax: opp_2.sprites.idle.framemax,
+    scale: opp_2.scale,
+    offset: {
+      x: opp_2.offset.x,
+      y: opp_2.offset.y,
+    },
+  });
+}
+function animate() {
+  window.requestAnimationFrame(animate);
+  C.fillStyle = "rgba(184, 136, 4, 0.808)";
+  C.fillRect(0, 0, canvas.width, canvas.height);
+  player_pre.update();
+  enemy_pre.update();
+}
+animate();
+setInterval(() => {
+  refresh();
+}, 1000);
 function choose() {
   pop.style.animation = "choose 1s ease-out";
   setTimeout(() => {
@@ -48,7 +113,12 @@ window.onload = () => {
   window.screenY = 0;
 };
 
-var choose1 = (element) => {
+function choose1(element) {
+  Array.from(player).forEach((child) => {
+    Array.from(child.children).forEach((child) => {
+      child.style.border = "unset";
+    });
+  });
   element.style.border = "5px solid #fff";
   playerid = element.id;
   if (playerid === "p1") {
@@ -69,12 +139,23 @@ var choose1 = (element) => {
     localStorage.setItem("player1", JSON.stringify(goblin_1));
   } else if (playerid === "p19") {
     localStorage.setItem("player1", JSON.stringify(skeleton_1));
+  } else if (playerid === "p25") {
+    localStorage.setItem("player1", JSON.stringify(el_crystal_1));
+  } else if (playerid === "p27") {
+    localStorage.setItem("player1", JSON.stringify(el_wind_1));
   }
+  object_1 = localStorage.getItem("player1");
+  opp_1 = JSON.parse(object_1);
+  object_2 = localStorage.getItem("player2");
+  opp_2 = JSON.parse(object_2);
+}
 
-  choose1 = 0;
-};
-
-var choose2 = (element) => {
+function choose2(element) {
+  Array.from(enemy).forEach((child) => {
+    Array.from(child.children).forEach((child) => {
+      child.style.border = "unset";
+    });
+  });
   element.style.border = "5px solid #fff";
   enemyid = element.id;
   if (enemyid === "p2") {
@@ -95,15 +176,16 @@ var choose2 = (element) => {
     localStorage.setItem("player2", JSON.stringify(goblin_2));
   } else if (enemyid === "p20") {
     localStorage.setItem("player2", JSON.stringify(skeleton_2));
+  } else if (enemyid === "p26") {
+    localStorage.setItem("player2", JSON.stringify(el_crystal_2));
+  } else if (enemyid === "p28") {
+    localStorage.setItem("player2", JSON.stringify(el_wind_2));
   }
-  // if (localStorage.getItem("player1") !== null &&
-  //  localStorage.getItem("background") !== null&&
-  //  localStorage.getItem("p2_name") !== null
-  //  ) {
-  //   window.location.href = "the main/index.html";
-  // }
-  choose2 = 0;
-};
+  object_1 = localStorage.getItem("player1");
+  opp_1 = JSON.parse(object_1);
+  object_2 = localStorage.getItem("player2");
+  opp_2 = JSON.parse(object_2);
+}
 
 var choose3 = (element) => {
   element.style.border = "5px solid white";
@@ -130,19 +212,15 @@ btn.addEventListener("click", () => {
       localStorage.setItem("p2_name", EnemyNamee.value);
       window.location.href = "./the main/index.html";
     } else {
-      if (!arabic) {
-        h.innerHTML = "⛔ Please enter your name !!!";
-      } else {
-        h.innerHTML = "ادخل الاسماء لو سمحت !!!";
-      }
+      h.innerHTML = "⛔ Please enter your name !!!";
+
       h.style.opacity = 1;
     }
   } else {
     h.style.opacity = 1;
-    if (!arabic) {
-      h.innerHTML = "⛔ Please Enter EVERY thing!!!";
-    } else {
-      h.innerHTML = "املاء جميع المتطلبات ";
-    }
+
+    h.innerHTML = "⛔ Please Enter EVERY thing!!!";
   }
 });
+
+console.log(player_pre, enemy_pre);

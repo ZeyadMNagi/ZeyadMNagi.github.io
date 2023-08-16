@@ -17,24 +17,15 @@
 <body>
 
     <div class="container">
-        <div onclick="choose()" class="layer"></div>
-
-        <div class="pop-lang">
-            <div class="lang">
-                <label>
-                    <h1>choose language / اختر اللغة</h1>
-                </label>
-                <div class="btn-lang">
-                    <button id="btn-en">English</button>
-                    <button id="btn-ar">عربي</button>
-                </div>
-            </div>            
-        </div>
 
         <div class="pop-up">
-            
-            <img src="../img/img/logo.png" alt="logo">
-            
+
+            <img style="width: 100px; height: 100px;" src="../img/img/logo.png" alt="logo">
+
+            <div style="display: flex;justify-content: center;" class="preview">
+                <canvas id="canvas"></canvas>
+            </div>
+
             <label>
                 <h1 class="head1">choose your character</h1>
             </label>
@@ -45,53 +36,36 @@
                         <th class="th2">player2</th>
                     </tr>
                     <tr>
-                        <td><img id="p1" src="../img/img/p1/preview.png" onclick="choose1( this)" alt="wizard">
+                        <td class="P">
+                            <img id="p1" src="../img/img/p1/preview.png" onclick="choose1( this)" alt="wizard">
                             <img src="../img/img/p3/preview.png" id="p3" class="wow" alt="electric sword"
                                 onclick="choose1(this)">
-                        </td>
-                        <td><img id="p2" src="../img/img/p2/preview.png" onclick="choose2( this)" alt="wizard">
-                            <img src="../img/img/p4/preview.png" id="p4" class="wow" alt="electric sword"
-                                onclick="choose2(this)">
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><img src="../img/img/p5/preview.png" id="p5" alt="ninja" onclick="choose1(this)">
+                            <img src="../img/img/p5/preview.png" id="p5" alt="ninja" onclick="choose1(this)">
                             <img src="../img/img/p7/preview.png" id="p7" alt="the King" onclick="choose1(this)">
-                        </td>
-                        <td><img src="../img/img/p6/preview.png" id="p6" alt="ninja" onclick="choose2(this)">
-                            <img src="../img/img/p8/preview.png" id="p8" alt="the King" onclick="choose2(this)">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
                             <img src="../img/img/p13/Idle (2).png" alt="evil wizard" id="p13" onclick="choose1(this)">
                             <img src="../img/img/p15/Idle (2).png" alt="knight" id="p15" onclick="choose1(this)">
-                        </td>
-                        <td>
-                            <img src="../img/img/p14/Idle (2).png" alt="evil wizard" id="p14" onclick="choose2(this)">
-                            <img src="../img/img/p16/Idle (2).png" alt="knight" id="p16" onclick="choose2(this)">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
                             <img src="../img/img/p9/preview.png" alt="fire wizard" id="p9" onclick="choose1(this)">
                             <img src="../img/img/p17/preview.png" alt="goblin" id="p17" onclick="choose1(this)">
+                            <img src="../img/img/p19/preview.png" alt="skeleton" id="p19" onclick="choose1(this)">
+                            <img src="../img/img/p25/crystal_mauler.png" style="scale: .7;" alt="crystal" id="p25" onclick="choose1(this)">
+                            <img src="../img/img/p27/wind_hashashin.png" style="scale: .7;" alt="wind" id="p27" onclick="choose1(this)">
                         </td>
-                        <td>
+                        <td class="E">
+                            <img id="p2" src="../img/img/p2/preview.png" onclick="choose2( this)" alt="wizard">
+                            <img src="../img/img/p4/preview.png" id="p4" class="wow" alt="electric sword"
+                                onclick="choose2(this)">
+                            <img src="../img/img/p6/preview.png" id="p6" alt="ninja" onclick="choose2(this)">
+                            <img src="../img/img/p8/preview.png" id="p8" alt="the King" onclick="choose2(this)">
+                            <img src="../img/img/p14/Idle (2).png" alt="evil wizard" id="p14" onclick="choose2(this)">
+                            <img src="../img/img/p16/Idle (2).png" alt="knight" id="p16" onclick="choose2(this)">
                             <img src="../img/img/p10/preview.png" alt="fire wizard" id="p10" onclick="choose2(this)">
                             <img src="../img/img/p18/preview.png" alt="goblin" id="p18" onclick="choose2(this)">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="../img/img/p19/preview.png" alt="skeleton" id="p19" onclick="choose1(this)">
-                        </td>
-                        <td>
                             <img src="../img/img/p20/preview.png" alt="skeleton" id="p20" onclick="choose2(this)">
+                            <img src="../img/img/p25/crystal_mauler.png" style="scale: .7;" alt="crystal" id="p26" onclick="choose2(this)">
+                            <img src="../img/img/p27/wind_hashashin.png" style="scale: .7;" alt="wind" id="p28" onclick="choose2(this)">
+
                         </td>
                     </tr>
-
                 </table>
             </div>
             <div class="backgrounds">
@@ -99,9 +73,9 @@
                     <h1 class="head2">choose the background</h1>
                 </label>
                 <div class="images">
-                    <img id="img1" src="../img/img/background.jpg" alt="" onclick="choose3(this) ">
-                    <img id="img2" src="../img/img/background.png" alt="" onclick="choose3(this) ">
-                    <img id="img3" src="../img/img/Backgroundf.png" alt="" onclick="choose3(this) ">
+                    <img id="img1" src="../img/img/background/background.jpg" alt="" onclick="choose3(this) ">
+                    <img id="img2" src="../img/img/background/background.png" alt="" onclick="choose3(this) ">
+                    <img id="img3" src="../img/img/background/Backgroundf.png" alt="" onclick="choose3(this) ">
                 </div>
             </div>
             <div class="names">
@@ -127,8 +101,9 @@
             </div>
         </div>
     </div>
-    <script src="the main/js/character.js"></script>
-    <script src="main.js"></script>
+    <script defer src="the main/js/classes.js"></script>
+    <script defer src="the main/js/character.js"></script>
+    <script defer src="main.js"></script>
 </body>
 
 </html>

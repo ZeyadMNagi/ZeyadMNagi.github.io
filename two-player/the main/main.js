@@ -40,7 +40,8 @@ const knight = [knight_1, knight_2];
 const goblin = [goblin_1, goblin_2];
 const skeleton = [skeleton_1, skeleton_2];
 const hunter = [hunter_1, hunter_2 ];
-
+const el_crystal = [el_crystal_1, el_crystal_2];
+const el_wind = [el_wind_1, el_wind_2];
 
 
 function face_P(i){
@@ -64,6 +65,10 @@ function face_P(i){
     player_use = skeleton[i]
   }else if(opp_1.name === "idk"){
     player_use = hunter[i]
+  }else if(opp_1.name === "wind"){
+    player_use = el_wind[i]
+  }else if(opp_1.name === "crystal"){
+    player_use = el_crystal[i]
   }
 
   player.sprites.idle.image.src = player_use.sprites.idle.imgSrc;
@@ -99,6 +104,10 @@ function face_E(i){
     enemy_use = skeleton[i]
   }else if(opp_2.name === "idk"){
     enemy_use = hunter[i]
+  }else if(opp_2.name === "wind"){
+    player_use = el_wind[i]
+  }else if(opp_2.name === "crystal"){
+    player_use = el_crystal[i]
   }
 
   enemy.sprites.idle.image.src = enemy_use.sprites.idle.imgSrc;
@@ -141,7 +150,6 @@ const background0 = new sprite({
   width: background_use.need.width,
   height: background_use.need.height,
 });
-
 //the shop
 if (background_use.need.Shop) {
   var shop_put = new sprite({
@@ -154,7 +162,6 @@ if (background_use.need.Shop) {
     framemax: 6,
   });
 }
-
 const player = new Fighter({
   position: {
     x: 20,
@@ -217,7 +224,6 @@ const player = new Fighter({
     height: 50,
   },
 });
-
 const enemy = new Fighter({
   position: {
     x: 600,

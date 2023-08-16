@@ -54,6 +54,9 @@ const wizard_1 = new Character({
     y: 155,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p1/idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p1/Idle.png",
       framemax: 6,
@@ -110,6 +113,9 @@ const wizard_2 = new Character({
     y: 155,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p2/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p2/Idle.png",
       framemax: 6,
@@ -166,6 +172,10 @@ const warrior_1 = new Character({
     y: 200,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p3/idle.png",
+    },
+
     idle: {
       imgSrc: "../../img/img/p3/Idle.png",
       framemax: 10,
@@ -222,6 +232,9 @@ const warrior_2 = new Character({
     y: 200,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p4/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p4/Idle.png",
       framemax: 10,
@@ -278,6 +291,9 @@ const samurai_1 = new Character({
     y: 220,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p5/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p5/Idle.png",
       framemax: 4,
@@ -334,6 +350,9 @@ const samurai_2 = new Character({
     y: 220,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p6/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p6/Idle.png",
       framemax: 4,
@@ -390,6 +409,9 @@ const king_1 = new Character({
     y: 160,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p7/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p7/Idle.png",
       framemax: 8,
@@ -445,6 +467,9 @@ const king_2 = new Character({
     y: 160,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p8/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p8/Idle.png",
       framemax: 8,
@@ -501,6 +526,9 @@ const evil_1 = new Character({
     y: 350,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p13/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p13/Idle.png",
       framemax: 8,
@@ -557,6 +585,9 @@ const evil_2 = new Character({
     y: 350,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p14/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p14/Idle.png",
       framemax: 8,
@@ -613,6 +644,9 @@ const knight_1 = new Character({
     y: 160,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p15/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p15/Idle.png",
       framemax: 10,
@@ -669,6 +703,9 @@ const knight_2 = new Character({
     y: 160,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p16/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p16/Idle.png",
       framemax: 10,
@@ -725,6 +762,9 @@ const fire_wizard_2 = new Character({
     y: 160,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p10/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p10/Idle.png",
       framemax: 8,
@@ -780,6 +820,9 @@ const fire_wizard_1 = new Character({
     y: 160,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p9/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p9/Idle.png",
       framemax: 8,
@@ -835,6 +878,9 @@ const goblin_1 = new Character({
     y: 150,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p17/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p17/Idle.png",
       framemax: 4,
@@ -890,6 +936,9 @@ const goblin_2 = new Character({
     y: 150,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p18/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p18/Idle.png",
       framemax: 4,
@@ -945,6 +994,9 @@ const skeleton_1 = new Character({
     y: 150,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p19/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p19/Idle.png",
       framemax: 4,
@@ -1000,6 +1052,9 @@ const skeleton_2 = new Character({
     y: 150,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p20/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p20/Idle.png",
       framemax: 4,
@@ -1056,6 +1111,9 @@ const hunter_1 = new Character({
     y: 150,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p21/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p21/idle.png",
       framemax: 8,
@@ -1111,6 +1169,9 @@ const hunter_2 = new Character({
     y: 140,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p22/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p22/idle.png",
       framemax: 8,
@@ -1154,7 +1215,6 @@ const hunter_2 = new Character({
   },
 });
 
-
 const purple_1 = new Character({
   name: "night",
   scale: 3,
@@ -1168,6 +1228,9 @@ const purple_1 = new Character({
     y: 35,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p23/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p23/idle.png",
       framemax: 9,
@@ -1211,8 +1274,6 @@ const purple_1 = new Character({
   },
 });
 
-
-
 const purple_2 = new Character({
   name: "night",
   scale: 3,
@@ -1226,6 +1287,9 @@ const purple_2 = new Character({
     y: 35,
   },
   sprites: {
+    preview: {
+      imgSrc: "../img/img/p24/Idle.png",
+    },
     idle: {
       imgSrc: "../../img/img/p24/idle.png",
       framemax: 9,
@@ -1269,6 +1333,241 @@ const purple_2 = new Character({
   },
 });
 
+const el_crystal_1 = new Character({
+  name: "crystal",
+  scale: 3,
+  need: {
+    canJump: true,
+    twoAttack: true,
+    faceR: true,
+  },
+  offset: {
+    x: 400,
+    y: 230,
+  },
+  sprites: {
+    preview: {
+      imgSrc: "../img/img/p25/Idle.png",
+    },
+    idle: {
+      imgSrc: "../../img/img/p25/idle.png",
+      framemax: 8,
+    },
+    run: {
+      imgSrc: "../../img/img/p25/Run.png",
+      framemax: 7,
+    },
+    jump: {
+      imgSrc: "../../img/img/p25/jump.png",
+      framemax: 3,
+    },
+    fall: {
+      imgSrc: "../../img/img/p25/fall.png",
+      framemax: 3,
+    },
+    death: {
+      imgSrc: "../../img/img/p25/Death.png",
+      framemax: 15,
+    },
+    hit: {
+      imgSrc: "../../img/img/p25/take_hit.png",
+      framemax: 6,
+    },
+    attack1: {
+      imgSrc: "../../img/img/p25/Attack1.png",
+      framemax: 7,
+    },
+    attack2: {
+      imgSrc: "../../img/img/p25/sp_atk.png",
+      framemax: 15,
+    },
+  },
+  attackbox: {
+    offset: {
+      x: 50,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
+  },
+});
+
+const el_crystal_2 = new Character({
+  name: "crystal",
+  scale: 3,
+  need: {
+    canJump: true,
+    twoAttack: true,
+    faceR: false,
+  },
+  offset: {
+    x: 400,
+    y: 230,
+  },
+  sprites: {
+    preview: {
+      imgSrc: "../img/img/p26/Idle.png",
+    },
+    idle: {
+      imgSrc: "../../img/img/p26/idle.png",
+      framemax: 8,
+    },
+    run: {
+      imgSrc: "../../img/img/p26/Run.png",
+      framemax: 7,
+    },
+    jump: {
+      imgSrc: "../../img/img/p26/jump.png",
+      framemax: 3,
+    },
+    fall: {
+      imgSrc: "../../img/img/p26/fall.png",
+      framemax: 3,
+    },
+    death: {
+      imgSrc: "../../img/img/p26/Death.png",
+      framemax: 15,
+    },
+    hit: {
+      imgSrc: "../../img/img/p26/take_hit.png",
+      framemax: 6,
+    },
+    attack1: {
+      imgSrc: "../../img/img/p26/Attack1.png",
+      framemax: 7,
+    },
+    attack2: {
+      imgSrc: "../../img/img/p26/sp_atk.png",
+      framemax: 15,
+    },
+  },
+  attackbox: {
+    offset: {
+      x: -150,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
+  },
+});
+
+const el_wind_1 = new Character({
+  name: "wind",
+  scale: 1.2,
+  need: {
+    canJump: true,
+    twoAttack: true,
+    faceR: true,
+  },
+  offset: {
+    x: 380,
+    y: 245,
+  },
+  sprites: {
+    preview: {
+      imgSrc: "../img/img/p27/Idle.png",
+    },
+    idle: {
+      imgSrc: "../../img/img/p27/idle.png",
+      framemax: 8,
+    },
+    run: {
+      imgSrc: "../../img/img/p27/Run.png",
+      framemax: 8,
+    },
+    jump: {
+      imgSrc: "../../img/img/p27/jump.png",
+      framemax: 3,
+    },
+    fall: {
+      imgSrc: "../../img/img/p27/fall.png",
+      framemax: 3,
+    },
+    death: {
+      imgSrc: "../../img/img/p27/Death.png",
+      framemax: 19,
+    },
+    hit: {
+      imgSrc: "../../img/img/p27/take_hit.png",
+      framemax: 6,
+    },
+    attack1: {
+      imgSrc: "../../img/img/p27/Attack1.png",
+      framemax: 8,
+    },
+    attack2: {
+      imgSrc: "../../img/img/p27/sp_atk.png",
+      framemax: 30,
+    },
+  },
+  attackbox: {
+    offset: {
+      x: 50,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
+  },
+});
+
+const el_wind_2 = new Character({
+  name: "wind",
+  scale: 1.2,
+  need: {
+    canJump: true,
+    twoAttack: true,
+    faceR: false,
+  },
+  offset: {
+    x: 380,
+    y: 245,
+  },
+  sprites: {
+    preview: {
+      imgSrc: "../img/img/p28/Idle.png",
+    },
+    idle: {
+      imgSrc: "../../img/img/p28/idle.png",
+      framemax: 8,
+    },
+    run: {
+      imgSrc: "../../img/img/p28/Run.png",
+      framemax: 8,
+    },
+    jump: {
+      imgSrc: "../../img/img/p28/jump.png",
+      framemax: 3,
+    },
+    fall: {
+      imgSrc: "../../img/img/p28/fall.png",
+      framemax: 3,
+    },
+    death: {
+      imgSrc: "../../img/img/p28/Death.png",
+      framemax: 19,
+    },
+    hit: {
+      imgSrc: "../../img/img/p28/take_hit.png",
+      framemax: 6,
+    },
+    attack1: {
+      imgSrc: "../../img/img/p28/Attack1.png",
+      framemax: 8,
+    },
+    attack2: {
+      imgSrc: "../../img/img/p28/sp_atk.png",
+      framemax: 30,
+    },
+  },
+  attackbox: {
+    offset: {
+      x: -150,
+      y: 50,
+    },
+    width: 170,
+    height: 50,
+  },
+});
 
 const background_3 = new Background({
   name: "forest",
@@ -1277,15 +1576,13 @@ const background_3 = new Background({
     y: 0,
   },
   need: {
-    imgSrc: "../../img/img/Backgroundf.jpeg",
+    imgSrc: "../../img/img/background/Backgroundf.jpeg",
     Shop: false,
     width: 1024,
     height: 576,
   },
   scale: 1.2,
 });
-
-
 const background_2 = new Background({
   name: "main",
   position: {
@@ -1293,7 +1590,7 @@ const background_2 = new Background({
     y: 0,
   },
   need: {
-    imgSrc: "../../img/img/background.png",
+    imgSrc: "../../img/img/background/background.png",
     Shop: true,
     width: 1024,
     height: 576,
@@ -1307,7 +1604,7 @@ const background_1 = new Background({
     y: 0,
   },
   need: {
-    imgSrc: "../../img/img/background.jpg",
+    imgSrc: "../../img/img/background/background.jpg",
     Shop: false,
     width: 1024,
     height: 576,
