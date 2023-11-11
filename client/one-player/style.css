@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", Arial;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  background: #233;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.pop-up {
+  display: flex;
+  flex-direction: column;
+  background: #b88804ce;
+  width: 80%;
+  height: 100%;
+  border: 5px solid wheat;
+  border-radius: 9px;
+  align-items: center;
+  justify-content: center;
+}
+td,
+tr {
+  padding: 10px;
+}
+
+.table {
+  align-items: center;
+  justify-content: center;
+  /* display: flex; */
+  padding: auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.images img:hover,
+td img:hover {
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+td {
+  text-align: center;
+  border-right: 5px solid black;
+}
+
+td:last-child {
+  border-right: none;
+}
+
+td img {
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+  margin: 5px;
+  /* margin: 0 auto; */
+  transform: scale(1.2);
+}
+label {
+  text-align: center;
+}
+
+h1 {
+  color: #fefefe;
+  font-size: 22px;
+  padding: 15px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+img:hover {
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+section {
+  padding: 50px 0;
+}
+
+nav {
+  width: 390px;
+  height: 50px;
+  font-size: 0;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  display: inline-block;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #fefefe;
+  text-decoration: none;
+  line-height: 50px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+nav .active {
+  background: #fefefe;
+  color: #b88804ce;
+  width: 120px;
+  border-radius: 8px;
+}
+
+.b {
+  align-items: center;
+  text-align: center;
+}
+
+button {
+  color: #ebebeb;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 25px;
+  padding: 8px;
+  border: 3px solid #ebebeb;
+  background: #966f05ce;
+  transition: 0.4s;
+}
+
+button:hover {
+  font-size: 18px;
+  color: #966f05ce;
+  background: #ebebeb;
+  padding: 10px;
+}
