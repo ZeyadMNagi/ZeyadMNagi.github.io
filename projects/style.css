@@ -58,7 +58,10 @@ section {
   justify-content: space-between;
   text-align: justify;
 }
-.crd2,.crd4,.crd6,.crd8{
+.crd2,
+.crd4,
+.crd6,
+.crd8 {
   background: #000011;
   border-radius: 25px;
 }
@@ -80,6 +83,16 @@ video {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
+}
+button {
+  padding: 7px;
+  border-radius: 15px;
+  margin: 10px;
+  font-size: 18px;
+}
+button a {
+  color: #212121;
+  text-decoration: none;
 }
 @media screen and (max-width: 960px) {
   .container {
@@ -108,7 +121,6 @@ video {
   .crd1 {
     padding: 150px 30px !important;
   }
-
 }
 .projectName {
   font-family: "Abril Fatface", serif;

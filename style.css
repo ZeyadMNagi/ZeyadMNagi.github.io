@@ -348,7 +348,6 @@ input,
     box-sizing: border-box;
   }
   nav {
-    flex-direction: column;
     gap: 30px;
   }
   nav a {
@@ -376,6 +375,8 @@ input,
     flex-wrap: wrap;
   }
   .icon {
+    background: #ffffff49;
+    padding: 50px;
     text-align: justify;
     font-stretch: extra-condensed;
     font-size: x-small;
@@ -387,7 +388,15 @@ input,
     display: none !important;
   }
   .start {
+    background: url(./images/WhatsApp\ Image\ 2024-02-17\ at\ 10.06.59_251c8869.jpg)
+      no-repeat 55% 20% fixed;
+    background-size: 100%;
     padding: 150px 20px !important;
     flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
   }
 }
