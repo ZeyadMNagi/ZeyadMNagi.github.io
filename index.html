@@ -20,9 +20,8 @@
         <nav>
           <h2 class="logo"><a href="#">zeyad m.nagi</a></h2>
           <h3 class="others">
-            <a href="#who">Who</a>
             <a class="lin" href="#about">about</a>
-            <a class="lin" href="#protfolio">portfolio</a>
+            <a class="lin" href="./projects/index.html">portfolio</a>
             <a class="lin" href="#contact">contact</a>
           </h3>
         </nav>
@@ -47,7 +46,7 @@
         <div class="lot" style="width: 800px">
           <div class="kalam">
             <h2 class="jname">I AM A FRONT END DEVELOPER</h2>
-            <h4 style="width: 530px; padding: 10px 0 10px 0; z-index: 4">
+            <h4 style="padding: 10px 0 10px 0; z-index: 4">
               My name is Zeyad, a 16-year-old from Egypt, and I have been a
               front-end developer for two years. I am committed to dedicating my
               time and putting in effort on each project for my clients. I have
@@ -76,26 +75,6 @@
               consistent colors for all screen sizes.
             </h4>
           </div>
-          <!-- <div class="pro">
-            <div class="go">
-              <div class="progress">
-                <div class="inner" style="width: 92%"></div>
-              </div>
-              <h5>HTML</h5>
-            </div>
-            <div class="go">
-              <div class="progress">
-                <div class="inner" style="width: 85%"></div>
-              </div>
-              <h5>css</h5>
-            </div>
-            <div class="go">
-              <div class="progress">
-                <div class="inner" style="width: 72%"></div>
-              </div>
-              <h5>javascript (JS)</h5>
-            </div>
-          </div> -->
         </div>
         <img
           src="images/WhatsApp Image 2024-01-16 at 15.32.09_c642a394.jpg"
@@ -108,7 +87,10 @@
           <h2 class="jname">MY PROTFOLIO</h2>
           <h5 style="padding: 15px">I have done alot of projects</h5>
           <div class="p1">
-            <div class="card crd1">
+            <div
+              class="card crd1"
+              onclick="window.location.href='./projects/index.html'"
+            >
               <img
                 src="images/projects/images/مناهضة-التدخين.png"
                 alt="vs smoking project"
@@ -116,7 +98,10 @@
               />
               <h3>VS Smoking Project</h3>
             </div>
-            <div class="card crd2">
+            <div
+              class="card crd2"
+              onclick="window.location.href='./projects/index.html'"
+            >
               <img
                 src="images/projects/images/X-0.png"
                 alt="X-0 game"
@@ -124,7 +109,10 @@
               />
               <h3>X-O game</h3>
             </div>
-            <div class="card crd3">
+            <div
+              class="card crd3"
+              onclick="window.location.href='./projects/index.html'"
+            >
               <img
                 src="images/projects/images/Language-Translator-CodingNepal.png"
                 alt="language translator"
@@ -134,7 +122,10 @@
             </div>
           </div>
           <div class="p2">
-            <div class="card crd4">
+            <div
+              class="card crd4"
+              onclick="window.location.href='./projects/index.html'"
+            >
               <img
                 src="images/projects/images/apple.png"
                 alt="iphone 13 pro project"
@@ -142,7 +133,10 @@
               />
               <h3>Apple IPhone 13 Pro Project</h3>
             </div>
-            <div class="card crd5">
+            <div
+              class="card crd5"
+              onclick="window.location.href='./projects/index.html'"
+            >
               <img
                 src="images/projects/images/cruds.png"
                 alt="CRUD APP"
@@ -150,7 +144,10 @@
               />
               <h3>CRUD Application (Create, Read, Update, Delete)</h3>
             </div>
-            <div class="card crd6">
+            <div
+              class="card crd6"
+              onclick="window.location.href='./projects/index.html'"
+            >
               <img
                 src="images/projects/images/fighter.png"
                 alt="fighter game"
@@ -160,7 +157,10 @@
             </div>
           </div>
           <div class="p3">
-            <div class="card crd7">
+            <div
+              class="card crd7"
+              onclick="window.location.href='./projects/index.html'"
+            >
               <img
                 src="images/projects/images/t0_d0-app.png"
                 alt="T0D0 app"
@@ -168,7 +168,10 @@
               />
               <h3>T0D0 App.</h3>
             </div>
-            <div class="card crd8">
+            <div
+              class="card crd8"
+              onclick="window.location.href='./projects/index.html'"
+            >
               <img
                 src="images/projects/images/balance.png"
                 alt="bank  balance"
@@ -176,7 +179,10 @@
               />
               <h3>Bank Balance Calculator.</h3>
             </div>
-            <div class="card crd9">
+            <div
+              class="card crd9"
+              onclick="window.location.href='./projects/index.html'"
+            >
               <img
                 src="images/projects/images/photoie.png"
                 alt="photo editor project"
@@ -258,7 +264,7 @@
             emailjs.sendForm("contact_service", "contact_form", this).then(
               () => {
                 console.log("SUCCESS!");
-                alert("Thank you for messaging me 😍")
+                alert("Thank you for messaging me 😍");
               },
               (error) => {
                 console.log("FAILED...", error);

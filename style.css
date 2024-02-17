@@ -4,14 +4,14 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
-body {
-  overflow-x: hidden;
-}
 .container {
+  box-sizing: border-box;
+  width: 100%;
   min-height: 100vh;
   background: #222;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 .container header {
   width: 100%;
@@ -52,24 +52,6 @@ nav a {
 section {
   padding: 150px 100px;
 }
-.progress {
-  width: 500px;
-  height: 4px;
-  background-color: lightgray;
-  border-radius: 5px;
-  opacity: 0.8;
-}
-.inner {
-  height: 10px;
-  border-radius: 9px;
-  top: -2px;
-  position: relative;
-  background-color: #ffffff;
-}
-.ooo {
-  font-family: "Smooch Sans", sans-serif;
-  font-optical-sizing: auto;
-}
 .jname {
   font-family: "Abril Fatface", serif;
   font-weight: 400;
@@ -108,7 +90,7 @@ section {
 }
 .icon {
   text-transform: capitalize;
-  background: #ffffff url(images/WhatsApp_Image_2024-02-14_at_20.58.07_f9e2f19e-transformed.png) no-repeat 330px / 350px;
+  background: aliceblue;
   padding: 100px;
   color: #111;
   width: 100%;
@@ -284,10 +266,10 @@ input,
 #email {
   height: 30px;
 }
-#submit{
-    width: 40%;
-    padding: 7px;
-    border-radius: 15px;
+#submit {
+  width: 40%;
+  padding: 7px;
+  border-radius: 15px;
 }
 .img {
   position: absolute;
@@ -358,5 +340,54 @@ input,
   }
   to {
     transform: rotate(0deg) translate(-50px) rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    box-sizing: border-box;
+  }
+  nav {
+    flex-direction: column;
+    gap: 30px;
+  }
+  nav a {
+    font-size: 16px;
+  }
+  section {
+    padding: 70px 30px;
+  }
+  .p1,
+  .p2,
+  .p3 {
+    flex-wrap: wrap;
+  }
+  #contact {
+    flex-wrap: wrap;
+  }
+  form {
+    width: 100%;
+  }
+  .words {
+    text-align: center;
+    width: 100%;
+  }
+  .about {
+    flex-wrap: wrap;
+  }
+  .icon {
+    text-align: justify;
+    font-stretch: extra-condensed;
+    font-size: x-small;
+  }
+  .lak {
+    display: none !important;
+  }
+  .img {
+    display: none !important;
+  }
+  .start {
+    padding: 150px 20px !important;
+    flex-wrap: wrap;
   }
 }
