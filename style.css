@@ -273,7 +273,7 @@ input,
 }
 .img {
   position: absolute;
-  height: 20%;
+  height: 100px;
   width: auto;
   z-index: 1;
 }
