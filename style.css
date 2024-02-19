@@ -154,6 +154,7 @@ section {
 .p2,
 .p3 {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   justify-content: center;
 }
@@ -273,7 +274,7 @@ input,
 }
 .img {
   position: absolute;
-  height: 100px;
+  height: 10%;
   width: auto;
   z-index: 1;
 }
