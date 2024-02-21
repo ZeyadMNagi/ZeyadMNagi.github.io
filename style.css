@@ -426,6 +426,9 @@ input,
   .about img:hover {
     transform: scale(1);
   }
+  .pdf {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 600px) {
   nav {
