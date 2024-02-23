@@ -220,6 +220,9 @@ section {
   transform: scale(1.1);
   opacity: 0.7;
   border-radius: 25px;
+  .more {
+    display: block;
+  }
 }
 .me {
   width: 320px;
@@ -331,6 +334,18 @@ input,
   margin: 15px;
 }
 
+.more {
+  text-decoration: none;
+  color: #fefefe;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 6px;
+  background: #333333;
+  display: none;
+  transition: 0.3s ease all;
+  font-family: "Kode Mono", monospace;
+}
+
 @keyframes circle1 {
   from {
     transform: rotate(0deg) translate(-30px) rotate(0deg);
@@ -428,6 +443,9 @@ input,
   }
   .pdf {
     width: 100%;
+  }
+  .more {
+    display: block;
   }
 }
 @media screen and (max-width: 600px) {

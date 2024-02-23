@@ -93,6 +93,7 @@ button {
 button a {
   color: #212121;
   text-decoration: none;
+  font-family: "Kode Mono", monospace;
 }
 @media screen and (max-width: 960px) {
   .container {
