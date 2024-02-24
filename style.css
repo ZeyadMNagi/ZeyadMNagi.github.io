@@ -452,17 +452,30 @@ input,
   nav {
     flex-direction: column;
   }
-  .con-t{
+  .con-t {
     font-size: 20px !important;
     padding: 5px;
   }
-  #contact{
+  #contact {
     padding: 100px 20px;
   }
-  .con{
+  .con {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    }
+  }
+}
+@media screen and (max-width: 320px) {
+  .card {
+    width: 80%;
+  }
+  .project {
+    width: 80%;
+  }
+  .jname {
+    font-size: 20px;
+  }.me{
+    width: 90%;
+  }
 }
