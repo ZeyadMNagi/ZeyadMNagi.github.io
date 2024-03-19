@@ -12,13 +12,13 @@
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
-}
-.container header {
-  width: 100%;
-  position: fixed;
-  text-align: center;
-  z-index: 10;
-  background: #222;
+  header {
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    z-index: 10;
+    background: #222;
+  }
 }
 .logo {
   font-weight: 800;
@@ -30,16 +30,16 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  a {
+    padding: 15px;
+    margin-left: 8px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+  }
 }
-nav a {
-  padding: 15px;
-  margin-left: 8px;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
 
-  transition: 0.5s;
-}
 .lin {
   position: relative;
   z-index: 4;
@@ -137,9 +137,9 @@ section {
 }
 .about img {
   transition: 0.4s;
-}
-.about img:hover {
-  transform: scale(1.2);
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 #protfolio {
   display: flex;
@@ -149,7 +149,6 @@ section {
   background: #000011;
   border-radius: 25px;
 }
-/* Style all Font Awesome icons */
 .fa {
   color: #fefefe;
   padding: 20px;
@@ -157,10 +156,9 @@ section {
   width: 50px;
   text-align: center;
   text-decoration: none;
-}
-/* Add a hover effect if desired */
-.fa:hover {
-  opacity: 0.7;
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .project {
@@ -184,10 +182,18 @@ section {
   font-size: 20px;
   font-weight: 700;
   transition: 0.5s;
-}
-.card h3 {
-  font-family: "Smooch Sans", sans-serif;
-  font-optical-sizing: auto;
+  h3 {
+    font-family: "Smooch Sans", sans-serif;
+    font-optical-sizing: auto;
+  }
+  &:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+    border-radius: 25px;
+    .more {
+      display: block;
+    }
+  }
 }
 .crd1 {
   background: rgba(0, 153, 255, 0.664);
@@ -216,14 +222,6 @@ section {
 .crd9 {
   background: rgba(149, 151, 42, 0.747);
 }
-.card:hover {
-  transform: scale(1.1);
-  opacity: 0.7;
-  border-radius: 25px;
-  .more {
-    display: block;
-  }
-}
 .me {
   width: 320px;
   border-radius: 12px;
@@ -233,24 +231,27 @@ section {
   font-size: 40px;
   font-weight: 800;
 }
-.words h4 {
-  font-size: 17px;
-  padding: 10px;
-  font-weight: 500;
-  opacity: 0.7;
+.words {
+  h4 {
+    font-size: 17px;
+    padding: 10px;
+    font-weight: 500;
+    opacity: 0.7;
+  }
+  h3 {
+    font-size: 25px;
+    width: fit-content;
+    font-weight: 700;
+    padding: 5px;
+    border: 2px solid grey;
+    transition: 0.5s;
+    &:hover {
+      transform: scale(1.2);
+      opacity: 0.7;
+    }
+  }
 }
-.words h3 {
-  font-size: 25px;
-  width: fit-content;
-  font-weight: 700;
-  padding: 5px;
-  border: 2px solid grey;
-  transition: 0.5s;
-}
-.words h3:hover {
-  transform: scale(1.2);
-  opacity: 0.7;
-}
+
 .line {
   width: 100px;
   height: 5px;
@@ -265,19 +266,18 @@ section {
 }
 form {
   width: 50%;
-}
-form label {
-  margin: 5px;
+  label {
+    margin: 5px;
+  }
 }
 input,
 #message {
   margin: 5px;
   width: 100%;
   border-radius: 8px;
-}
-#message {
   height: 250px;
 }
+
 #name {
   height: 30px;
 }
@@ -475,7 +475,8 @@ input,
   }
   .jname {
     font-size: 20px;
-  }.me{
+  }
+  .me {
     width: 90%;
   }
 }
