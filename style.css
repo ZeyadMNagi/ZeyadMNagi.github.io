@@ -222,6 +222,9 @@ section {
 .crd9 {
   background: rgba(149, 151, 42, 0.747);
 }
+.crd10{
+  background: rgb(65, 201, 226);
+}
 .me {
   width: 320px;
   border-radius: 12px;
