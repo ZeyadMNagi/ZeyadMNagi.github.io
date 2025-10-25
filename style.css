@@ -340,6 +340,65 @@ nav.scrolled {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
+.key-badges {
+  margin-top: 30px;
+}
+
+.key-badges h3 {
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.badges-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.badge-logo {
+  height: 80px;
+  border-radius: 8px;
+  background: #fff;
+  transition: transform 0.3s ease;
+}
+
+.badge-logo:hover {
+  transform: scale(1.1);
+}
+
+.rotating-text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: rotate 30s linear infinite;
+}
+
+.rotating-text-svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--primary);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 3.3px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 .certifications {
   padding: 120px 40px;
   background: var(--bg-darker);
@@ -347,7 +406,7 @@ nav.scrolled {
 
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
@@ -376,12 +435,19 @@ nav.scrolled {
   width: 70px;
   height: 70px;
   margin: 0 auto 20px;
-  background: var(--gradient-1);
+  background: #ffffff;
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 32px;
+  padding: 10px;
+}
+
+.cert-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .cert-card h3 {
@@ -835,6 +901,10 @@ nav.scrolled {
 
   .skills-list {
     grid-template-columns: 1fr;
+  }
+
+  .rotating-text-container {
+    display: none;
   }
 }
 
