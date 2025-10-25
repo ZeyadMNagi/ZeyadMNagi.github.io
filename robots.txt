@@ -1,0 +1,5 @@
+# Allow all user agents to crawl the site
+User-agent: *
+Allow: /
+
+Sitemap: https://zeyadmnagi.github.io/sitemap.xml

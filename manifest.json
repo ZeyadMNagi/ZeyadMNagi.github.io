@@ -1,0 +1,21 @@
+{
+  "name": "Zeyad M. Nagi - Portfolio",
+  "short_name": "Zeyad's Portfolio",
+  "description": "The portfolio of Zeyad M. Nagi, an award-winning Front-End Developer from Egypt.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "icons": [
+    {
+      "src": "images/logo-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
